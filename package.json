@@ -1,0 +1,29 @@
+{
+  "name": "roll-the-dice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rotaryjay/Roll-The-Dice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rotaryjay/Roll-The-Dice/issues"
+  },
+  "homepage": "https://github.com/rotaryjay/Roll-The-Dice#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-rev": "^10.0.0",
+    "gulp-sass": "^5.1.0",
+    "merge-stream": "^2.0.0",
+    "sass": "^1.65.1"
+  },
+  "dependencies": {
+    "gulp-rev-collector": "^1.3.3"
+  }
+}
