@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node -r esm gulpfile.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rotaryjay/Roll-The-Dice#readme",
   "devDependencies": {
+    "esm": "^3.2.25",
     "gulp": "^4.0.2",
     "gulp-rev": "^10.0.0",
     "gulp-sass": "^5.1.0",

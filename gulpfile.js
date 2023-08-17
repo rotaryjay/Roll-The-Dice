@@ -2,13 +2,13 @@
 
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const revCollector = require('gulp-rev-collector');
-const merge = require('merge-stream');
+//const revCollector = require('gulp-rev-collector');
+//const merge = require('merge-stream');
 
-async function getRev() {
-  const rev = await import('gulp-rev');
-  return rev.default;
-}
+/*async function getRev() {
+  const revModule = await import('gulp-rev');
+  return revModule.default;
+}*/
 
 function copyJs() {
   return gulp.src('src/js/*')
@@ -23,7 +23,7 @@ function copyIndex() {
 function copyPng() {
   return gulp.src('src/img/*.png')
     .pipe(gulp.dest('dist/img'));
-}    
+}
 
 function copyJpg() {
   return gulp.src('src/img/*.jpg')
@@ -47,7 +47,7 @@ function buildStyles() {
     .pipe(gulp.dest('dist/css/'));
 }
 
-async function gulpRev() {
+/*async function gulpRev() {
   const rev = await getRev();
 
   const cssFiles = gulp.src('src/css/*.css')
@@ -63,16 +63,16 @@ async function gulpRev() {
     .pipe(gulp.dest('src/manifest'));
 
   return merge(cssFiles, jsFiles);
-}
+}*/
 
-async function updateIndex() {
+/*async function updateIndex() {
   const rev = await getRev();
   return gulp.src(['src/manifest/rev-manifest.json', 'dist/index.html'])
     .pipe(revCollector({
       replaceReved: true
     }))
     .pipe(gulp.dest('dist'));
-}
+}*/
 
 // Define a task that encapsulates other tasks
 const build = gulp.series(
@@ -82,9 +82,9 @@ const build = gulp.series(
   copyPng,
   copyJpg,
   copyBackgrounds,
-  buildStyles,
+  buildStyles/*,
   gulpRev,
-  updateIndex
+  updateIndex*/
 );
 
 // Define default task
