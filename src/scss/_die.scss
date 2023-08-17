@@ -1,8 +1,8 @@
 .oneDie {
     position: absolute;
     display: block;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     border: 1px solid $lightgrey; 
     border-radius: 10px;
     top: 50%;
@@ -11,12 +11,11 @@
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 35%, rgba(255,255,255,1) 100%);
     cursor: pointer;
+    box-shadow: 0 0 10px 1px black;
     &.oneDot {
         //background-color: red;
         .dieDot {
             border-radius: 50%;
-            height: 20px;
-            width: 20px;
             top: 50%;
             left: 50%;
         }
@@ -25,8 +24,7 @@
         //background-color: blue;
         .dieDot {
             border-radius: 50%;
-            height: 20px;
-            width: 20px;
+            
             &:nth-child(1) {
                 top: 25%;
                 left: 25%;
@@ -41,8 +39,6 @@
         //background-color: pink;
         .dieDot {
             border-radius: 50%;
-            height: 20px;
-            width: 20px;
             &:nth-child(1) {
                 top: 25%;
                 left: 25%;
@@ -61,8 +57,6 @@
         //background-color: purple;
         .dieDot {
             border-radius: 50%;
-            height: 20px;
-            width: 20px;
             &:nth-child(1) {
                 top: 25%;
                 left: 25%;
@@ -85,8 +79,6 @@
         //background-color: purple;
         .dieDot {
             border-radius: 50%;
-            height: 20px;
-            width: 20px;
             &:nth-child(1) {
                 top: 25%;
                 left: 25%;
@@ -113,8 +105,6 @@
         //background-color: purple;
         .dieDot {
             border-radius: 50%;
-            height: 20px;
-            width: 20px;
             &:nth-child(1) {
                 top: 25%;
                 left: 25%;
@@ -147,6 +137,8 @@
     position: absolute;
     display: block;
     transform: translate(-50%, -50%);
+    height: 40px;
+    width: 40px;
 }
 .hidden {
     display: none;
