@@ -153,6 +153,9 @@ document.querySelector('.roll').addEventListener('click', function() {
         dieThree.classList.remove('show-bottom');
         dieThree.classList.add('show-back');
     }
+
+    let totalRoll = currentRollDieOne + currentRollDieTwo + currentRollDieThree;
+    document.querySelector('.totalRoll').textContent = "Total for this roll is " + totalRoll;
 });
 
 // Disable pinch zoom
