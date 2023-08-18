@@ -1,94 +1,101 @@
 function randomDiceResult() {
     return Math.floor((Math.random()*6)+1)
 }
+let dieOne = document.querySelector('.dieOne');
+let sideOne = document.querySelector('.sideOne');
+let sideTwo = document.querySelector('.sideTwo');
+let sideThree = document.querySelector('.sideThree');
+let sideFour = document.querySelector('.sideFour');
+let sideFive = document.querySelector('.sideFive');
+let sideSix = document.querySelector('.sideSix');
 
-let oneDot = document.querySelector('.oneDie.oneDot');
-let twoDots = document.querySelector('.oneDie.twoDots');
-let threeDots = document.querySelector('.oneDie.threeDots');
-let fourDots = document.querySelector('.oneDie.fourDots');
-let fiveDots = document.querySelector('.oneDie.fiveDots');
-let sixDots = document.querySelector('.oneDie.sixDots');
+let showFront = true;
+let showTop = false;
+let showLeft = false;
+let showRight = false;
+let showBottom = false;
+let showBack = false;
 
-let oneDotHidden = true;
-let twoDotsHidden = true;
-let threeDotsHidden = true;
-let fourDotsHidden = true;
-let fiveDotsHidden = true;
-let sixDotsHidden = true;
-
-function resetHidden() {
-    oneDotHidden = true;
-    twoDotsHidden = true;
-    threeDotsHidden = true;
-    fourDotsHidden = true;
-    fiveDotsHidden = true;
-    sixDotsHidden = true;
+function resetShowHide() {
+    showFront = false;
+    showTop = false;
+    showLeft = false;
+    showRight = false;
+    showBottom = false;
+    showBack = false;
 }
 
-function showHideDie() {
-    if (oneDotHidden) {
-        oneDot.classList.add('hidden');
+function showHide() {
+    if (showFront) {
+        dieOne.classList.add('show-front');
     } else {
-        oneDot.classList.remove('hidden')
+        dieOne.classList.remove('show-front')
     }
-    if (twoDotsHidden) {
-        twoDots.classList.add('hidden');
-    }  else {
-        twoDots.classList.remove('hidden');
-    }
-    if (threeDotsHidden) {
-        threeDots.classList.add('hidden');
+    if (showTop) {
+        dieOne.classList.add('show-top');
     } else {
-        threeDots.classList.remove('hidden');
+        dieOne.classList.remove('show-top')
     }
-    if (fourDotsHidden) {
-        fourDots.classList.add('hidden');
+    if (showLeft) {
+        dieOne.classList.add('show-left');
     } else {
-        fourDots.classList.remove('hidden');
+        dieOne.classList.remove('show-left')
     }
-    if (fiveDotsHidden) {
-        fiveDots.classList.add('hidden');
+    if (showRight) {
+        dieOne.classList.add('show-right');
     } else {
-        fiveDots.classList.remove('hidden');
+        dieOne.classList.remove('show-right')
     }
-    if (sixDotsHidden) {
-        sixDots.classList.add('hidden');
+    if (showBottom) {
+        dieOne.classList.add('show-bottom');
     } else {
-        sixDots.classList.remove('hidden');
+        dieOne.classList.remove('show-bottom')
+    }
+    if (showBack) {
+        dieOne.classList.add('show-back');
+    } else {
+        dieOne.classList.remove('show-back')
     }
 }
-
-resetHidden();
-showHideDie();
 
 document.querySelector('.roll').addEventListener('click', function() {
-    resetHidden();
-    showHideDie();
     let currentRoll = randomDiceResult();
     if (currentRoll === 1) {
         console.log(currentRoll);
-        oneDotHidden = false;
-        showHideDie()
+        //dieOne.classList.add('show-front');
+        showFront = true;
+        resetShowHide();
+        showHide();
     } else if (currentRoll === 2) {
         console.log(currentRoll);
-        twoDotsHidden = false;
-        showHideDie()
+        //dieOne.classList.add('show-top');
+        showTop = true;
+        resetShowHide();
+        showHide();
     } else if (currentRoll === 3) {
         console.log(currentRoll);
-        threeDotsHidden = false;
-        showHideDie()
+        //dieOne.classList.add('show-left');
+        showLeft = true;
+        resetShowHide();
+        showHide();
     }  else if (currentRoll === 4) {
         console.log(currentRoll);
-        fourDotsHidden = false;
-        showHideDie()
+        //dieOne.classList.add('show-right');
+        showRight = true;
+        resetShowHide();
+        showHide();
     }  else if (currentRoll === 5) {
         console.log(currentRoll);
-        fiveDotsHidden = false;
-        showHideDie()
+        //dieOne.classList.add('show-bottom');
+        showBottom = true;
+        resetShowHide();
+        showHide();
     }  else if (currentRoll === 6) {
         console.log(currentRoll);
-        sixDotsHidden = false;
-        showHideDie()
+        //dieOne.classList.add('show-back');
+        showBack = true;
+        resetShowHide();
+        showHide();
     }
 });
 

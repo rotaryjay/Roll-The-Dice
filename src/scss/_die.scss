@@ -1,30 +1,80 @@
-.oneDie {
-    position: absolute;
+.dieOne {
+    position: relative;
     display: block;
-    height: 200px;
-    width: 200px;
-    border: 1px solid $lightgrey; 
     border-radius: 10px;
     top: 50%;
     left: 50%;
+    height: 200px;
+    width: 200px;
     transform: translate(-50%, -50%);
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 35%, rgba(255,255,255,1) 100%);
     cursor: pointer;
-    box-shadow: 0 0 10px 1px black;
-    &.oneDot {
-        //background-color: red;
+    /*background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 35%, rgba(255,255,255,1) 100%);    */
+    transform-style: preserve-3d;
+    transition: transform .4s;
+    transform: translateZ(-100px);
+    .sideOne,
+    .sideTwo,
+    .sideThree,
+    .sideFour,
+    .sideFive,
+    .sideSix {
+        background: rgb(255,255,255);
+        background: $diecolor;    
+        border: 1px solid $lightgrey; 
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+    }
+    &.show-front {
+        transform: translateZ(-100px) rotateY( 0deg);
+    }
+    &.show-right {
+        transform: translateZ(-100px) rotateY(-90deg);
+    }
+    &.show-back {
+        transform: translateZ(-100px) rotateY(-180deg);
+    }
+    &.show-left {
+        transform: translateZ(-100px) rotateY(90deg); 
+    }
+    &.show-top {
+        transform: translateZ(-100px) rotateX(-90deg);
+    }
+    &.show-bottom {
+        transform: translateZ(-100px) rotateX(90deg); 
+    }
+
+    .front {
+        transform: rotateY(0deg) translateZ(100px);
+    }
+    .right {
+        transform: rotateY(90deg) translateZ(100px);
+    }
+    .back {
+        transform: rotateY(180deg) translateZ(100px);
+    }
+    .left {
+        transform: rotateY(-90deg) translateZ(100px);
+    }
+    .top {
+        transform: rotateX(90deg) translateZ(100px);
+    }
+    .bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+    .sideOne {
         .dieDot {
             border-radius: 50%;
             top: 50%;
             left: 50%;
         }
     }
-    &.twoDots {
+    .sideTwo {
         //background-color: blue;
         .dieDot {
             border-radius: 50%;
-            
             &:nth-child(1) {
                 top: 25%;
                 left: 25%;
@@ -35,8 +85,7 @@
             }
         }
     }
-    &.threeDots {
-        //background-color: pink;
+    .sideThree {
         .dieDot {
             border-radius: 50%;
             &:nth-child(1) {
@@ -53,7 +102,7 @@
             }
         }
     }
-    &.fourDots {
+    .sideFour {
         //background-color: purple;
         .dieDot {
             border-radius: 50%;
@@ -75,7 +124,7 @@
             }
         }
     }
-    &.fiveDots {
+    .sideFive {
         //background-color: purple;
         .dieDot {
             border-radius: 50%;
@@ -101,7 +150,7 @@
             }
         }
     }
-    &.sixDots {
+    .sideSix {
         //background-color: purple;
         .dieDot {
             border-radius: 50%;
