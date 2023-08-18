@@ -1,12 +1,12 @@
 
 .dieOne {
-    transition: transform .4s;
+    transition: transform 5.4s;
 }
 .dieTwo {
-    transition: transform .3s;
+    transition: transform 3.3s;
 }
 .dieThree {
-    transition: transform .45s;
+    transition: transform 2.45s;
 }
 
 .dieOne, .dieTwo, .dieThree {
@@ -22,7 +22,7 @@
     /*background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 35%, rgba(255,255,255,1) 100%);    */
     transform-style: preserve-3d;
-    box-shadow: 0 0 100px -10px black;
+    /*box-shadow: 0 0 100px -10px black;*/
     transform: translateZ(-50px);
     margin: auto;
     .sideOne,
@@ -37,7 +37,7 @@
         position: absolute;
         width: 100px;
         height: 100px;
-        border-radius: 10px;
+        border-radius: 5px;
     }
     &.show-front {
         transform: translateZ(-50px) rotateY( 0deg);
