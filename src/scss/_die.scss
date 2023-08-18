@@ -1,15 +1,27 @@
 
 .dieOne {
-    transition: transform 5.4s;
+    transition: all (random(300)+200) + ms;
 }
 .dieTwo {
-    transition: transform 3.3s;
+    transition: all (random(300)+200) + ms;
 }
 .dieThree {
-    transition: transform 2.45s;
+    transition: all (random(300)+200) + ms;
+}
+.dieFour {
+    transition: all (random(300)+200) + ms;
+}
+.dieFive {
+    transition: all (random(300)+200) + ms;
+}
+.dieSix {
+    transition: all (random(300)+200) + ms;
 }
 
-.dieOne, .dieTwo, .dieThree {
+.dieOne, .dieTwo, .dieThree, .dieFour, .dieFive, .dieSix {
+    /*animation-duration: .5s;
+    animation-name: dropIn;
+    animation-iteration-count: 1;*/
     position: relative;
     display: block;
     border-radius: 10px;
@@ -41,21 +53,39 @@
     }
     &.show-front {
         transform: translateZ(-50px) rotateY( 0deg);
+        /*animation-duration: .5s;
+        animation-name: dropIn;
+        animation-iteration-count: 1;*/
     }
     &.show-right {
         transform: translateZ(-50px) rotateY(-90deg);
+        /*animation-duration: .5s;
+        animation-name: dropIn;
+        animation-iteration-count: 1;*/
     }
     &.show-back {
         transform: translateZ(-50px) rotateY(-180deg);
+        /*animation-duration: .5s;
+        animation-name: dropIn;
+        animation-iteration-count: 1;*/
     }
     &.show-left {
         transform: translateZ(-50px) rotateY(90deg); 
+        /*animation-duration: .5s;
+        animation-name: dropIn;
+        animation-iteration-count: 1;*/
     }
     &.show-top {
         transform: translateZ(-50px) rotateX(-90deg);
+        /*animation-duration: .5s;
+        animation-name: dropIn;
+        animation-iteration-count: 1;*/
     }
     &.show-bottom {
         transform: translateZ(-50px) rotateX(90deg); 
+        /*animation-duration: .5s;
+        animation-name: dropIn;
+        animation-iteration-count: 1;*/
     }
 
     .front {

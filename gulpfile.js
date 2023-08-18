@@ -40,6 +40,16 @@ function copyFavicon() {
     .pipe(gulp.dest('dist/img/favicon'));
 }
 
+function copyIosIcons() {
+  return gulp.src('src/img/favicon/ios/*.*')
+    .pipe(gulp.dest('dist/img/favicon/ios'));
+}
+
+function copyIosAppIcon() {
+  return gulp.src('src/img/favicon/ios/AppIcon.appiconset/*.*')
+    .pipe(gulp.dest('dist/img/favicon/ios/AppIcon.appiconset'));
+}
+
 function buildStyles() {
   return gulp.src('src/scss/style.scss')
     .pipe(sass().on('error', sass.logError))
@@ -79,6 +89,8 @@ const build = gulp.series(
   copyIndex,
   copyJs,
   copyFavicon,
+  copyIosIcons,
+  copyIosAppIcon,
   copyPng,
   copyJpg,
   copyBackgrounds,

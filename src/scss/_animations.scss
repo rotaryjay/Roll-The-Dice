@@ -1,7 +1,7 @@
 .dieDot {
-  animation-duration: .5s;
+  /*animation-duration: .5s;
   animation-name: blurIn;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1;*/
 }
 
 @keyframes blurIn {
@@ -13,5 +13,16 @@
   to {
     opacity: 1;
     filter: blur(0);
+  }
+}
+
+@keyframes dropIn {
+  from {
+    transform: scale(2);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

@@ -1,23 +1,24 @@
-.gameBoard {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
+body {
   background-color: darkgreen;
   background-image: url("../img/vecteezy_felt-dark-green-soft-rough-textile-material-background_15234513_921.jpg");
   background-position: center center;
   background-size: cover;
-  perspective: 600px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
 }
-.gameBoard button {
+
+.diceSelectorDiv {
+  color: white;
+  font-size: 1.5em;
+  margin: 10px auto;
+}
+.diceSelectorDiv label {
+  display: block;
+}
+
+button {
   font-size: 2em;
   cursor: pointer;
 }
-.gameBoard button.roll {
+button.roll {
   color: white;
   border-radius: 50%;
   box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.8);
@@ -27,51 +28,121 @@
   background: rgb(253, 29, 29);
   background: radial-gradient(circle, rgb(253, 29, 29) 0%, rgb(152, 41, 41) 32%, rgb(0, 0, 0) 100%);
   transition: all 0.3s ease-in-out;
-  position: absolute;
+  /*position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);*/
+  /*&:hover {
+      background: rgb(253,29,29);
+      background: radial-gradient(circle, rgba(253,29,29,1) 22%, rgba(152,41,41,1) 61%, rgba(0,0,0,1) 100%);
+      transition: all .3s ease-in-out;
+      transform: translate(-50%, -50%) scale(1.2);
+  }*/
 }
-.gameBoard button.roll:hover {
-  background: rgb(253, 29, 29);
-  background: radial-gradient(circle, rgb(253, 29, 29) 22%, rgb(152, 41, 41) 61%, rgb(0, 0, 0) 100%);
-  transition: all 0.3s ease-in-out;
-  transform: translate(-50%, -50%) scale(1.2);
-}
-.gameBoard .buttonScoreZone {
+
+.buttonScoreZone {
+  grid-area: 2/1/3/7;
   background: linear-gradient(153deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 81%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid black;
   border-radius: 10px;
   box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.5);
-  width: 300px;
-  height: 25vh;
+  /*width: 300px;
+  height: 25vh;*/
   text-align: center;
   position: relative;
+  padding: 50px;
 }
-.gameBoard .totalRoll {
+
+.totalRollDesc {
+  font-family: "Caveat", cursive;
+  font-size: 1.6em;
   color: white;
-  bottom: -8px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -20px);
+  margin: 10px auto;
+  width: 100%;
+}
+
+.totalRoll {
+  font-family: "Montserrat", sans-serif;
+  color: white;
   display: block;
+  font-size: 3em;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.gameBoard {
+  font-family: "Caveat", cursive;
+  position: relative;
+  /*height: 100vh;*/
+  width: 100vw;
+  perspective: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /*display: grid; 
+  grid-template-columns: repeat(6, 1fr); 
+  grid-template-rows: repeat(5, 1fr); 
+  grid-column-gap: 20px;
+  grid-row-gap: 20px; */
+  /*.rollZone1 {
+      grid-area: 1 / 1 / 2 / 2;
+  }
+  .rollZone2 {
+      grid-area: 1 / 2 / 2 / 3;
+  }
+  .rollZone3 {
+      grid-area: 1 / 3 / 2 / 4;
+  }
+  .rollZone4 {
+      grid-area: 1 / 4 / 2 / 5;
+  }
+  .rollZone5 {
+      grid-area: 1 / 5 / 2 / 6;
+  }
+  .rollZone6 {
+      grid-area: 1 / 6 / 2 / 7;
+  }*/
+}
+.gameBoard .rollZone1, .gameBoard .rollZone2, .gameBoard .rollZone3, .gameBoard .rollZone4, .gameBoard .rollZone5, .gameBoard .rollZone6 {
+  padding: 20px;
+  min-width: 200px;
+}
+.gameBoard .rollZone1.hidden, .gameBoard .rollZone2.hidden, .gameBoard .rollZone3.hidden, .gameBoard .rollZone4.hidden, .gameBoard .rollZone5.hidden, .gameBoard .rollZone6.hidden {
+  display: none;
 }
 
 .dieOne {
-  transition: transform 5.4s;
+  transition: all 448ms;
 }
 
 .dieTwo {
-  transition: transform 3.3s;
+  transition: all 257ms;
 }
 
 .dieThree {
-  transition: transform 2.45s;
+  transition: all 204ms;
 }
 
-.dieOne, .dieTwo, .dieThree {
+.dieFour {
+  transition: all 328ms;
+}
+
+.dieFive {
+  transition: all 335ms;
+}
+
+.dieSix {
+  transition: all 480ms;
+}
+
+.dieOne, .dieTwo, .dieThree, .dieFour, .dieFive, .dieSix {
+  /*animation-duration: .5s;
+  animation-name: dropIn;
+  animation-iteration-count: 1;*/
   position: relative;
   display: block;
   border-radius: 10px;
@@ -101,148 +172,181 @@
 .dieThree .sideThree,
 .dieThree .sideFour,
 .dieThree .sideFive,
-.dieThree .sideSix {
+.dieThree .sideSix, .dieFour .sideOne,
+.dieFour .sideTwo,
+.dieFour .sideThree,
+.dieFour .sideFour,
+.dieFour .sideFive,
+.dieFour .sideSix, .dieFive .sideOne,
+.dieFive .sideTwo,
+.dieFive .sideThree,
+.dieFive .sideFour,
+.dieFive .sideFive,
+.dieFive .sideSix, .dieSix .sideOne,
+.dieSix .sideTwo,
+.dieSix .sideThree,
+.dieSix .sideFour,
+.dieSix .sideFive,
+.dieSix .sideSix {
   background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(220, 220, 220) 35%, rgb(255, 255, 255) 100%);
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(195, 195, 195) 100%);
   border: 1px solid rgb(200, 200, 200);
   position: absolute;
   width: 100px;
   height: 100px;
   border-radius: 5px;
 }
-.dieOne.show-front, .dieTwo.show-front, .dieThree.show-front {
+.dieOne.show-front, .dieTwo.show-front, .dieThree.show-front, .dieFour.show-front, .dieFive.show-front, .dieSix.show-front {
   transform: translateZ(-50px) rotateY(0deg);
+  /*animation-duration: .5s;
+  animation-name: dropIn;
+  animation-iteration-count: 1;*/
 }
-.dieOne.show-right, .dieTwo.show-right, .dieThree.show-right {
+.dieOne.show-right, .dieTwo.show-right, .dieThree.show-right, .dieFour.show-right, .dieFive.show-right, .dieSix.show-right {
   transform: translateZ(-50px) rotateY(-90deg);
+  /*animation-duration: .5s;
+  animation-name: dropIn;
+  animation-iteration-count: 1;*/
 }
-.dieOne.show-back, .dieTwo.show-back, .dieThree.show-back {
+.dieOne.show-back, .dieTwo.show-back, .dieThree.show-back, .dieFour.show-back, .dieFive.show-back, .dieSix.show-back {
   transform: translateZ(-50px) rotateY(-180deg);
+  /*animation-duration: .5s;
+  animation-name: dropIn;
+  animation-iteration-count: 1;*/
 }
-.dieOne.show-left, .dieTwo.show-left, .dieThree.show-left {
+.dieOne.show-left, .dieTwo.show-left, .dieThree.show-left, .dieFour.show-left, .dieFive.show-left, .dieSix.show-left {
   transform: translateZ(-50px) rotateY(90deg);
+  /*animation-duration: .5s;
+  animation-name: dropIn;
+  animation-iteration-count: 1;*/
 }
-.dieOne.show-top, .dieTwo.show-top, .dieThree.show-top {
+.dieOne.show-top, .dieTwo.show-top, .dieThree.show-top, .dieFour.show-top, .dieFive.show-top, .dieSix.show-top {
   transform: translateZ(-50px) rotateX(-90deg);
+  /*animation-duration: .5s;
+  animation-name: dropIn;
+  animation-iteration-count: 1;*/
 }
-.dieOne.show-bottom, .dieTwo.show-bottom, .dieThree.show-bottom {
+.dieOne.show-bottom, .dieTwo.show-bottom, .dieThree.show-bottom, .dieFour.show-bottom, .dieFive.show-bottom, .dieSix.show-bottom {
   transform: translateZ(-50px) rotateX(90deg);
+  /*animation-duration: .5s;
+  animation-name: dropIn;
+  animation-iteration-count: 1;*/
 }
-.dieOne .front, .dieTwo .front, .dieThree .front {
+.dieOne .front, .dieTwo .front, .dieThree .front, .dieFour .front, .dieFive .front, .dieSix .front {
   transform: rotateY(0deg) translateZ(50px);
 }
-.dieOne .right, .dieTwo .right, .dieThree .right {
+.dieOne .right, .dieTwo .right, .dieThree .right, .dieFour .right, .dieFive .right, .dieSix .right {
   transform: rotateY(90deg) translateZ(50px);
 }
-.dieOne .back, .dieTwo .back, .dieThree .back {
+.dieOne .back, .dieTwo .back, .dieThree .back, .dieFour .back, .dieFive .back, .dieSix .back {
   transform: rotateY(180deg) translateZ(50px);
 }
-.dieOne .left, .dieTwo .left, .dieThree .left {
+.dieOne .left, .dieTwo .left, .dieThree .left, .dieFour .left, .dieFive .left, .dieSix .left {
   transform: rotateY(-90deg) translateZ(50px);
 }
-.dieOne .top, .dieTwo .top, .dieThree .top {
+.dieOne .top, .dieTwo .top, .dieThree .top, .dieFour .top, .dieFive .top, .dieSix .top {
   transform: rotateX(90deg) translateZ(50px);
 }
-.dieOne .bottom, .dieTwo .bottom, .dieThree .bottom {
+.dieOne .bottom, .dieTwo .bottom, .dieThree .bottom, .dieFour .bottom, .dieFive .bottom, .dieSix .bottom {
   transform: rotateX(-90deg) translateZ(50px);
 }
-.dieOne .sideOne .dieDot, .dieTwo .sideOne .dieDot, .dieThree .sideOne .dieDot {
+.dieOne .sideOne .dieDot, .dieTwo .sideOne .dieDot, .dieThree .sideOne .dieDot, .dieFour .sideOne .dieDot, .dieFive .sideOne .dieDot, .dieSix .sideOne .dieDot {
   border-radius: 50%;
   top: 50%;
   left: 50%;
 }
-.dieOne .sideTwo .dieDot, .dieTwo .sideTwo .dieDot, .dieThree .sideTwo .dieDot {
+.dieOne .sideTwo .dieDot, .dieTwo .sideTwo .dieDot, .dieThree .sideTwo .dieDot, .dieFour .sideTwo .dieDot, .dieFive .sideTwo .dieDot, .dieSix .sideTwo .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideTwo .dieDot:nth-child(1), .dieTwo .sideTwo .dieDot:nth-child(1), .dieThree .sideTwo .dieDot:nth-child(1) {
+.dieOne .sideTwo .dieDot:nth-child(1), .dieTwo .sideTwo .dieDot:nth-child(1), .dieThree .sideTwo .dieDot:nth-child(1), .dieFour .sideTwo .dieDot:nth-child(1), .dieFive .sideTwo .dieDot:nth-child(1), .dieSix .sideTwo .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideTwo .dieDot:nth-child(2), .dieTwo .sideTwo .dieDot:nth-child(2), .dieThree .sideTwo .dieDot:nth-child(2) {
+.dieOne .sideTwo .dieDot:nth-child(2), .dieTwo .sideTwo .dieDot:nth-child(2), .dieThree .sideTwo .dieDot:nth-child(2), .dieFour .sideTwo .dieDot:nth-child(2), .dieFive .sideTwo .dieDot:nth-child(2), .dieSix .sideTwo .dieDot:nth-child(2) {
   top: 75%;
   left: 75%;
 }
-.dieOne .sideThree .dieDot, .dieTwo .sideThree .dieDot, .dieThree .sideThree .dieDot {
+.dieOne .sideThree .dieDot, .dieTwo .sideThree .dieDot, .dieThree .sideThree .dieDot, .dieFour .sideThree .dieDot, .dieFive .sideThree .dieDot, .dieSix .sideThree .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideThree .dieDot:nth-child(1), .dieTwo .sideThree .dieDot:nth-child(1), .dieThree .sideThree .dieDot:nth-child(1) {
+.dieOne .sideThree .dieDot:nth-child(1), .dieTwo .sideThree .dieDot:nth-child(1), .dieThree .sideThree .dieDot:nth-child(1), .dieFour .sideThree .dieDot:nth-child(1), .dieFive .sideThree .dieDot:nth-child(1), .dieSix .sideThree .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideThree .dieDot:nth-child(2), .dieTwo .sideThree .dieDot:nth-child(2), .dieThree .sideThree .dieDot:nth-child(2) {
+.dieOne .sideThree .dieDot:nth-child(2), .dieTwo .sideThree .dieDot:nth-child(2), .dieThree .sideThree .dieDot:nth-child(2), .dieFour .sideThree .dieDot:nth-child(2), .dieFive .sideThree .dieDot:nth-child(2), .dieSix .sideThree .dieDot:nth-child(2) {
   top: 50%;
   left: 50%;
 }
-.dieOne .sideThree .dieDot:nth-child(3), .dieTwo .sideThree .dieDot:nth-child(3), .dieThree .sideThree .dieDot:nth-child(3) {
+.dieOne .sideThree .dieDot:nth-child(3), .dieTwo .sideThree .dieDot:nth-child(3), .dieThree .sideThree .dieDot:nth-child(3), .dieFour .sideThree .dieDot:nth-child(3), .dieFive .sideThree .dieDot:nth-child(3), .dieSix .sideThree .dieDot:nth-child(3) {
   top: 75%;
   left: 75%;
 }
-.dieOne .sideFour .dieDot, .dieTwo .sideFour .dieDot, .dieThree .sideFour .dieDot {
+.dieOne .sideFour .dieDot, .dieTwo .sideFour .dieDot, .dieThree .sideFour .dieDot, .dieFour .sideFour .dieDot, .dieFive .sideFour .dieDot, .dieSix .sideFour .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideFour .dieDot:nth-child(1), .dieTwo .sideFour .dieDot:nth-child(1), .dieThree .sideFour .dieDot:nth-child(1) {
+.dieOne .sideFour .dieDot:nth-child(1), .dieTwo .sideFour .dieDot:nth-child(1), .dieThree .sideFour .dieDot:nth-child(1), .dieFour .sideFour .dieDot:nth-child(1), .dieFive .sideFour .dieDot:nth-child(1), .dieSix .sideFour .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideFour .dieDot:nth-child(2), .dieTwo .sideFour .dieDot:nth-child(2), .dieThree .sideFour .dieDot:nth-child(2) {
+.dieOne .sideFour .dieDot:nth-child(2), .dieTwo .sideFour .dieDot:nth-child(2), .dieThree .sideFour .dieDot:nth-child(2), .dieFour .sideFour .dieDot:nth-child(2), .dieFive .sideFour .dieDot:nth-child(2), .dieSix .sideFour .dieDot:nth-child(2) {
   top: 25%;
   left: 75%;
 }
-.dieOne .sideFour .dieDot:nth-child(3), .dieTwo .sideFour .dieDot:nth-child(3), .dieThree .sideFour .dieDot:nth-child(3) {
+.dieOne .sideFour .dieDot:nth-child(3), .dieTwo .sideFour .dieDot:nth-child(3), .dieThree .sideFour .dieDot:nth-child(3), .dieFour .sideFour .dieDot:nth-child(3), .dieFive .sideFour .dieDot:nth-child(3), .dieSix .sideFour .dieDot:nth-child(3) {
   top: 75%;
   left: 25%;
 }
-.dieOne .sideFour .dieDot:nth-child(4), .dieTwo .sideFour .dieDot:nth-child(4), .dieThree .sideFour .dieDot:nth-child(4) {
+.dieOne .sideFour .dieDot:nth-child(4), .dieTwo .sideFour .dieDot:nth-child(4), .dieThree .sideFour .dieDot:nth-child(4), .dieFour .sideFour .dieDot:nth-child(4), .dieFive .sideFour .dieDot:nth-child(4), .dieSix .sideFour .dieDot:nth-child(4) {
   top: 75%;
   left: 75%;
 }
-.dieOne .sideFive .dieDot, .dieTwo .sideFive .dieDot, .dieThree .sideFive .dieDot {
+.dieOne .sideFive .dieDot, .dieTwo .sideFive .dieDot, .dieThree .sideFive .dieDot, .dieFour .sideFive .dieDot, .dieFive .sideFive .dieDot, .dieSix .sideFive .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideFive .dieDot:nth-child(1), .dieTwo .sideFive .dieDot:nth-child(1), .dieThree .sideFive .dieDot:nth-child(1) {
+.dieOne .sideFive .dieDot:nth-child(1), .dieTwo .sideFive .dieDot:nth-child(1), .dieThree .sideFive .dieDot:nth-child(1), .dieFour .sideFive .dieDot:nth-child(1), .dieFive .sideFive .dieDot:nth-child(1), .dieSix .sideFive .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideFive .dieDot:nth-child(2), .dieTwo .sideFive .dieDot:nth-child(2), .dieThree .sideFive .dieDot:nth-child(2) {
+.dieOne .sideFive .dieDot:nth-child(2), .dieTwo .sideFive .dieDot:nth-child(2), .dieThree .sideFive .dieDot:nth-child(2), .dieFour .sideFive .dieDot:nth-child(2), .dieFive .sideFive .dieDot:nth-child(2), .dieSix .sideFive .dieDot:nth-child(2) {
   top: 25%;
   left: 75%;
 }
-.dieOne .sideFive .dieDot:nth-child(3), .dieTwo .sideFive .dieDot:nth-child(3), .dieThree .sideFive .dieDot:nth-child(3) {
+.dieOne .sideFive .dieDot:nth-child(3), .dieTwo .sideFive .dieDot:nth-child(3), .dieThree .sideFive .dieDot:nth-child(3), .dieFour .sideFive .dieDot:nth-child(3), .dieFive .sideFive .dieDot:nth-child(3), .dieSix .sideFive .dieDot:nth-child(3) {
   top: 75%;
   left: 25%;
 }
-.dieOne .sideFive .dieDot:nth-child(4), .dieTwo .sideFive .dieDot:nth-child(4), .dieThree .sideFive .dieDot:nth-child(4) {
+.dieOne .sideFive .dieDot:nth-child(4), .dieTwo .sideFive .dieDot:nth-child(4), .dieThree .sideFive .dieDot:nth-child(4), .dieFour .sideFive .dieDot:nth-child(4), .dieFive .sideFive .dieDot:nth-child(4), .dieSix .sideFive .dieDot:nth-child(4) {
   top: 75%;
   left: 75%;
 }
-.dieOne .sideFive .dieDot:nth-child(5), .dieTwo .sideFive .dieDot:nth-child(5), .dieThree .sideFive .dieDot:nth-child(5) {
+.dieOne .sideFive .dieDot:nth-child(5), .dieTwo .sideFive .dieDot:nth-child(5), .dieThree .sideFive .dieDot:nth-child(5), .dieFour .sideFive .dieDot:nth-child(5), .dieFive .sideFive .dieDot:nth-child(5), .dieSix .sideFive .dieDot:nth-child(5) {
   top: 50%;
   left: 50%;
 }
-.dieOne .sideSix .dieDot, .dieTwo .sideSix .dieDot, .dieThree .sideSix .dieDot {
+.dieOne .sideSix .dieDot, .dieTwo .sideSix .dieDot, .dieThree .sideSix .dieDot, .dieFour .sideSix .dieDot, .dieFive .sideSix .dieDot, .dieSix .sideSix .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideSix .dieDot:nth-child(1), .dieTwo .sideSix .dieDot:nth-child(1), .dieThree .sideSix .dieDot:nth-child(1) {
+.dieOne .sideSix .dieDot:nth-child(1), .dieTwo .sideSix .dieDot:nth-child(1), .dieThree .sideSix .dieDot:nth-child(1), .dieFour .sideSix .dieDot:nth-child(1), .dieFive .sideSix .dieDot:nth-child(1), .dieSix .sideSix .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideSix .dieDot:nth-child(2), .dieTwo .sideSix .dieDot:nth-child(2), .dieThree .sideSix .dieDot:nth-child(2) {
+.dieOne .sideSix .dieDot:nth-child(2), .dieTwo .sideSix .dieDot:nth-child(2), .dieThree .sideSix .dieDot:nth-child(2), .dieFour .sideSix .dieDot:nth-child(2), .dieFive .sideSix .dieDot:nth-child(2), .dieSix .sideSix .dieDot:nth-child(2) {
   top: 50%;
   left: 25%;
 }
-.dieOne .sideSix .dieDot:nth-child(3), .dieTwo .sideSix .dieDot:nth-child(3), .dieThree .sideSix .dieDot:nth-child(3) {
+.dieOne .sideSix .dieDot:nth-child(3), .dieTwo .sideSix .dieDot:nth-child(3), .dieThree .sideSix .dieDot:nth-child(3), .dieFour .sideSix .dieDot:nth-child(3), .dieFive .sideSix .dieDot:nth-child(3), .dieSix .sideSix .dieDot:nth-child(3) {
   top: 75%;
   left: 25%;
 }
-.dieOne .sideSix .dieDot:nth-child(4), .dieTwo .sideSix .dieDot:nth-child(4), .dieThree .sideSix .dieDot:nth-child(4) {
+.dieOne .sideSix .dieDot:nth-child(4), .dieTwo .sideSix .dieDot:nth-child(4), .dieThree .sideSix .dieDot:nth-child(4), .dieFour .sideSix .dieDot:nth-child(4), .dieFive .sideSix .dieDot:nth-child(4), .dieSix .sideSix .dieDot:nth-child(4) {
   top: 25%;
   left: 75%;
 }
-.dieOne .sideSix .dieDot:nth-child(5), .dieTwo .sideSix .dieDot:nth-child(5), .dieThree .sideSix .dieDot:nth-child(5) {
+.dieOne .sideSix .dieDot:nth-child(5), .dieTwo .sideSix .dieDot:nth-child(5), .dieThree .sideSix .dieDot:nth-child(5), .dieFour .sideSix .dieDot:nth-child(5), .dieFive .sideSix .dieDot:nth-child(5), .dieSix .sideSix .dieDot:nth-child(5) {
   top: 50%;
   left: 75%;
 }
-.dieOne .sideSix .dieDot:nth-child(6), .dieTwo .sideSix .dieDot:nth-child(6), .dieThree .sideSix .dieDot:nth-child(6) {
+.dieOne .sideSix .dieDot:nth-child(6), .dieTwo .sideSix .dieDot:nth-child(6), .dieThree .sideSix .dieDot:nth-child(6), .dieFour .sideSix .dieDot:nth-child(6), .dieFive .sideSix .dieDot:nth-child(6), .dieSix .sideSix .dieDot:nth-child(6) {
   top: 75%;
   left: 75%;
 }
@@ -261,9 +365,9 @@
 }
 
 .dieDot {
-  animation-duration: 0.5s;
+  /*animation-duration: .5s;
   animation-name: blurIn;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1;*/
 }
 
 @keyframes blurIn {
@@ -274,6 +378,15 @@
   to {
     opacity: 1;
     filter: blur(0);
+  }
+}
+@keyframes dropIn {
+  from {
+    transform: scale(2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
