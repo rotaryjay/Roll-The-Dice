@@ -7,6 +7,11 @@
   background-position: center center;
   background-size: cover;
   perspective: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 .gameBoard button {
   font-size: 2em;
@@ -24,168 +29,188 @@
 }
 
 .dieOne {
+  transition: transform 0.4s;
+}
+
+.dieTwo {
+  transition: transform 0.3s;
+}
+
+.dieThree {
+  transition: transform 0.45s;
+}
+
+.dieOne, .dieTwo, .dieThree {
   position: relative;
   display: block;
   border-radius: 10px;
-  top: 50%;
-  left: 50%;
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   transform: translate(-50%, -50%);
   cursor: pointer;
   /*background: rgb(255,255,255);
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 35%, rgba(255,255,255,1) 100%);    */
   transform-style: preserve-3d;
-  transition: transform 0.4s;
-  transform: translateZ(-100px);
+  transform: translateZ(-50px);
+  margin: auto;
 }
 .dieOne .sideOne,
 .dieOne .sideTwo,
 .dieOne .sideThree,
 .dieOne .sideFour,
 .dieOne .sideFive,
-.dieOne .sideSix {
+.dieOne .sideSix, .dieTwo .sideOne,
+.dieTwo .sideTwo,
+.dieTwo .sideThree,
+.dieTwo .sideFour,
+.dieTwo .sideFive,
+.dieTwo .sideSix, .dieThree .sideOne,
+.dieThree .sideTwo,
+.dieThree .sideThree,
+.dieThree .sideFour,
+.dieThree .sideFive,
+.dieThree .sideSix {
   background: rgb(255, 255, 255);
   background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(235, 235, 235) 35%, rgb(255, 255, 255) 100%);
   border: 1px solid rgb(220, 220, 220);
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   border-radius: 10px;
 }
-.dieOne.show-front {
-  transform: translateZ(-100px) rotateY(0deg);
+.dieOne.show-front, .dieTwo.show-front, .dieThree.show-front {
+  transform: translateZ(-50px) rotateY(0deg);
 }
-.dieOne.show-right {
-  transform: translateZ(-100px) rotateY(-90deg);
+.dieOne.show-right, .dieTwo.show-right, .dieThree.show-right {
+  transform: translateZ(-50px) rotateY(-90deg);
 }
-.dieOne.show-back {
-  transform: translateZ(-100px) rotateY(-180deg);
+.dieOne.show-back, .dieTwo.show-back, .dieThree.show-back {
+  transform: translateZ(-50px) rotateY(-180deg);
 }
-.dieOne.show-left {
-  transform: translateZ(-100px) rotateY(90deg);
+.dieOne.show-left, .dieTwo.show-left, .dieThree.show-left {
+  transform: translateZ(-50px) rotateY(90deg);
 }
-.dieOne.show-top {
-  transform: translateZ(-100px) rotateX(-90deg);
+.dieOne.show-top, .dieTwo.show-top, .dieThree.show-top {
+  transform: translateZ(-50px) rotateX(-90deg);
 }
-.dieOne.show-bottom {
-  transform: translateZ(-100px) rotateX(90deg);
+.dieOne.show-bottom, .dieTwo.show-bottom, .dieThree.show-bottom {
+  transform: translateZ(-50px) rotateX(90deg);
 }
-.dieOne .front {
-  transform: rotateY(0deg) translateZ(100px);
+.dieOne .front, .dieTwo .front, .dieThree .front {
+  transform: rotateY(0deg) translateZ(50px);
 }
-.dieOne .right {
-  transform: rotateY(90deg) translateZ(100px);
+.dieOne .right, .dieTwo .right, .dieThree .right {
+  transform: rotateY(90deg) translateZ(50px);
 }
-.dieOne .back {
-  transform: rotateY(180deg) translateZ(100px);
+.dieOne .back, .dieTwo .back, .dieThree .back {
+  transform: rotateY(180deg) translateZ(50px);
 }
-.dieOne .left {
-  transform: rotateY(-90deg) translateZ(100px);
+.dieOne .left, .dieTwo .left, .dieThree .left {
+  transform: rotateY(-90deg) translateZ(50px);
 }
-.dieOne .top {
-  transform: rotateX(90deg) translateZ(100px);
+.dieOne .top, .dieTwo .top, .dieThree .top {
+  transform: rotateX(90deg) translateZ(50px);
 }
-.dieOne .bottom {
-  transform: rotateX(-90deg) translateZ(100px);
+.dieOne .bottom, .dieTwo .bottom, .dieThree .bottom {
+  transform: rotateX(-90deg) translateZ(50px);
 }
-.dieOne .sideOne .dieDot {
+.dieOne .sideOne .dieDot, .dieTwo .sideOne .dieDot, .dieThree .sideOne .dieDot {
   border-radius: 50%;
   top: 50%;
   left: 50%;
 }
-.dieOne .sideTwo .dieDot {
+.dieOne .sideTwo .dieDot, .dieTwo .sideTwo .dieDot, .dieThree .sideTwo .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideTwo .dieDot:nth-child(1) {
+.dieOne .sideTwo .dieDot:nth-child(1), .dieTwo .sideTwo .dieDot:nth-child(1), .dieThree .sideTwo .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideTwo .dieDot:nth-child(2) {
+.dieOne .sideTwo .dieDot:nth-child(2), .dieTwo .sideTwo .dieDot:nth-child(2), .dieThree .sideTwo .dieDot:nth-child(2) {
   top: 75%;
   left: 75%;
 }
-.dieOne .sideThree .dieDot {
+.dieOne .sideThree .dieDot, .dieTwo .sideThree .dieDot, .dieThree .sideThree .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideThree .dieDot:nth-child(1) {
+.dieOne .sideThree .dieDot:nth-child(1), .dieTwo .sideThree .dieDot:nth-child(1), .dieThree .sideThree .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideThree .dieDot:nth-child(2) {
+.dieOne .sideThree .dieDot:nth-child(2), .dieTwo .sideThree .dieDot:nth-child(2), .dieThree .sideThree .dieDot:nth-child(2) {
   top: 50%;
   left: 50%;
 }
-.dieOne .sideThree .dieDot:nth-child(3) {
+.dieOne .sideThree .dieDot:nth-child(3), .dieTwo .sideThree .dieDot:nth-child(3), .dieThree .sideThree .dieDot:nth-child(3) {
   top: 75%;
   left: 75%;
 }
-.dieOne .sideFour .dieDot {
+.dieOne .sideFour .dieDot, .dieTwo .sideFour .dieDot, .dieThree .sideFour .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideFour .dieDot:nth-child(1) {
+.dieOne .sideFour .dieDot:nth-child(1), .dieTwo .sideFour .dieDot:nth-child(1), .dieThree .sideFour .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideFour .dieDot:nth-child(2) {
+.dieOne .sideFour .dieDot:nth-child(2), .dieTwo .sideFour .dieDot:nth-child(2), .dieThree .sideFour .dieDot:nth-child(2) {
   top: 25%;
   left: 75%;
 }
-.dieOne .sideFour .dieDot:nth-child(3) {
+.dieOne .sideFour .dieDot:nth-child(3), .dieTwo .sideFour .dieDot:nth-child(3), .dieThree .sideFour .dieDot:nth-child(3) {
   top: 75%;
   left: 25%;
 }
-.dieOne .sideFour .dieDot:nth-child(4) {
+.dieOne .sideFour .dieDot:nth-child(4), .dieTwo .sideFour .dieDot:nth-child(4), .dieThree .sideFour .dieDot:nth-child(4) {
   top: 75%;
   left: 75%;
 }
-.dieOne .sideFive .dieDot {
+.dieOne .sideFive .dieDot, .dieTwo .sideFive .dieDot, .dieThree .sideFive .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideFive .dieDot:nth-child(1) {
+.dieOne .sideFive .dieDot:nth-child(1), .dieTwo .sideFive .dieDot:nth-child(1), .dieThree .sideFive .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideFive .dieDot:nth-child(2) {
+.dieOne .sideFive .dieDot:nth-child(2), .dieTwo .sideFive .dieDot:nth-child(2), .dieThree .sideFive .dieDot:nth-child(2) {
   top: 25%;
   left: 75%;
 }
-.dieOne .sideFive .dieDot:nth-child(3) {
+.dieOne .sideFive .dieDot:nth-child(3), .dieTwo .sideFive .dieDot:nth-child(3), .dieThree .sideFive .dieDot:nth-child(3) {
   top: 75%;
   left: 25%;
 }
-.dieOne .sideFive .dieDot:nth-child(4) {
+.dieOne .sideFive .dieDot:nth-child(4), .dieTwo .sideFive .dieDot:nth-child(4), .dieThree .sideFive .dieDot:nth-child(4) {
   top: 75%;
   left: 75%;
 }
-.dieOne .sideFive .dieDot:nth-child(5) {
+.dieOne .sideFive .dieDot:nth-child(5), .dieTwo .sideFive .dieDot:nth-child(5), .dieThree .sideFive .dieDot:nth-child(5) {
   top: 50%;
   left: 50%;
 }
-.dieOne .sideSix .dieDot {
+.dieOne .sideSix .dieDot, .dieTwo .sideSix .dieDot, .dieThree .sideSix .dieDot {
   border-radius: 50%;
 }
-.dieOne .sideSix .dieDot:nth-child(1) {
+.dieOne .sideSix .dieDot:nth-child(1), .dieTwo .sideSix .dieDot:nth-child(1), .dieThree .sideSix .dieDot:nth-child(1) {
   top: 25%;
   left: 25%;
 }
-.dieOne .sideSix .dieDot:nth-child(2) {
+.dieOne .sideSix .dieDot:nth-child(2), .dieTwo .sideSix .dieDot:nth-child(2), .dieThree .sideSix .dieDot:nth-child(2) {
   top: 50%;
   left: 25%;
 }
-.dieOne .sideSix .dieDot:nth-child(3) {
+.dieOne .sideSix .dieDot:nth-child(3), .dieTwo .sideSix .dieDot:nth-child(3), .dieThree .sideSix .dieDot:nth-child(3) {
   top: 75%;
   left: 25%;
 }
-.dieOne .sideSix .dieDot:nth-child(4) {
+.dieOne .sideSix .dieDot:nth-child(4), .dieTwo .sideSix .dieDot:nth-child(4), .dieThree .sideSix .dieDot:nth-child(4) {
   top: 25%;
   left: 75%;
 }
-.dieOne .sideSix .dieDot:nth-child(5) {
+.dieOne .sideSix .dieDot:nth-child(5), .dieTwo .sideSix .dieDot:nth-child(5), .dieThree .sideSix .dieDot:nth-child(5) {
   top: 50%;
   left: 75%;
 }
-.dieOne .sideSix .dieDot:nth-child(6) {
+.dieOne .sideSix .dieDot:nth-child(6), .dieTwo .sideSix .dieDot:nth-child(6), .dieThree .sideSix .dieDot:nth-child(6) {
   top: 75%;
   left: 75%;
 }
@@ -195,8 +220,8 @@
   position: absolute;
   display: block;
   transform: translate(-50%, -50%);
-  height: 40px;
-  width: 40px;
+  height: 20px;
+  width: 20px;
 }
 
 .hidden {
