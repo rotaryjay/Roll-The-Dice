@@ -1,14 +1,32 @@
 //document.addEventListener('DOMContentLoaded', function () {
 
+    let arrayDice = [1];
+
+    document.querySelector('.addDie').addEventListener('click', function() {
+        if ((arrayDice.length >= 1) && (arrayDice.length < 6)) {
+            arrayDice.push(1);
+        } else {
+            alert("You cannot have more than 6 dice.")
+        }
+    });
+
+    document.querySelector('.removeDie').addEventListener('click', function() {
+        if ((arrayDice.length <= 6) && (arrayDice.length > 1)) {
+            arrayDice.pop();            
+        } else {
+            alert("You cannot have less than 1 die.")
+        }
+    });
+
     let numberOfDice = '1';
 
-    let rolloneOne = document.querySelector('.rollZone1');
+    let rollZoneOne = document.querySelector('.rollZone1');
     let rollZoneTwo = document.querySelector('.rollZone2');
     let rollZoneThree = document.querySelector('.rollZone3');
     let rollZoneFour = document.querySelector('.rollZone4');
     let rollZoneFive = document.querySelector('.rollZone5');
     let rollZoneSix = document.querySelector('.rollZone6');
-Z
+
     let dieOne = document.querySelector('.rollZone1 .dieOne');
     let dieTwo = document.querySelector('.rollZone2 .dieTwo');
     let dieThree = document.querySelector('.rollZone3 .dieThree');
@@ -119,20 +137,19 @@ Z
         }
     }
 
-    document.querySelector('#numberOfDice').addEventListener('change', function() {
+    /*document.querySelector('#numberOfDice').addEventListener('change', function() {
         selectElement = document.querySelector('#numberOfDice');
         output = selectElement.value;
         numberOfDice = output;
         showHideRollZones();
         resetDice();
         document.querySelector('.totalRoll').textContent = output;
-    });
+    });*/
 
     document.querySelector('.roll').addEventListener('click', function() {
         if (numberOfDice === '1') {
             let currentRollDieOne = randomDiceResult();
             if (currentRollDieOne === 1) {
-                console.log(currentRollDieOne);
                 dieOne.classList.add('show-front');
                 dieOne.classList.remove('show-top');
                 dieOne.classList.remove('show-left');
@@ -140,7 +157,6 @@ Z
                 dieOne.classList.remove('show-bottom');
                 dieOne.classList.remove('show-back');
             } else if (currentRollDieOne === 2) {
-                console.log(currentRollDieOne);
                 dieOne.classList.remove('show-front');
                 dieOne.classList.add('show-top');
                 dieOne.classList.remove('show-left');
@@ -148,7 +164,6 @@ Z
                 dieOne.classList.remove('show-bottom');
                 dieOne.classList.remove('show-back');
             } else if (currentRollDieOne === 3) {
-                console.log(currentRollDieOne);
                 dieOne.classList.remove('show-front');
                 dieOne.classList.remove('show-top');
                 dieOne.classList.add('show-left');
@@ -156,7 +171,6 @@ Z
                 dieOne.classList.remove('show-bottom');
                 dieOne.classList.remove('show-back');
             }  else if (currentRollDieOne === 4) {
-                console.log(currentRollDieOne);
                 dieOne.classList.remove('show-front');
                 dieOne.classList.remove('show-top');
                 dieOne.classList.remove('show-left');
@@ -164,7 +178,6 @@ Z
                 dieOne.classList.remove('show-bottom');
                 dieOne.classList.remove('show-back');
             }  else if (currentRollDieOne === 5) {
-                console.log(currentRollDieOne);
                 dieOne.classList.remove('show-front');
                 dieOne.classList.remove('show-top');
                 dieOne.classList.remove('show-left');
@@ -172,7 +185,6 @@ Z
                 dieOne.classList.add('show-bottom');
                 dieOne.classList.remove('show-back');
             }  else if (currentRollDieOne === 6) {
-                console.log(currentRollDieOne);
                 dieOne.classList.remove('show-front');
                 dieOne.classList.remove('show-top');
                 dieOne.classList.remove('show-left');
@@ -187,7 +199,6 @@ Z
                 let currentRollDieOne = randomDiceResult();
                 let currentRollDieTwo = randomDiceResult();
                 if (currentRollDieOne === 1) {
-                    //console.log(currentRollDieOne);
                     dieOne.classList.add('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -195,7 +206,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 2) {
-                    //console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.add('show-top');
                     dieOne.classList.remove('show-left');
@@ -203,7 +213,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 3) {
-                    //console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.add('show-left');
@@ -211,7 +220,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 4) {
-                    //console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -219,7 +227,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 5) {
-                    //console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -227,7 +234,6 @@ Z
                     dieOne.classList.add('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 6) {
-                    //console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -237,7 +243,6 @@ Z
                 }
             
                 if (currentRollDieTwo === 1) {
-                    //console.log(currentRollDieOne);
                     dieTwo.classList.add('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -245,7 +250,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 2) {
-                    //console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.add('show-top');
                     dieTwo.classList.remove('show-left');
@@ -253,7 +257,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 3) {
-                    //console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.add('show-left');
@@ -261,7 +264,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 4) {
-                    //console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -269,7 +271,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 5) {
-                    //console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -277,7 +278,6 @@ Z
                     dieTwo.classList.add('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 6) {
-                    //console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -296,7 +296,6 @@ Z
                 let currentRollDieTwo = randomDiceResult();
                 let currentRollDieThree = randomDiceResult();
                 if (currentRollDieOne === 1) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.add('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -304,7 +303,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 2) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.add('show-top');
                     dieOne.classList.remove('show-left');
@@ -312,7 +310,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 3) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.add('show-left');
@@ -320,7 +317,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 4) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -328,7 +324,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 5) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -336,7 +331,6 @@ Z
                     dieOne.classList.add('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 6) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -346,7 +340,6 @@ Z
                 }
             
                 if (currentRollDieTwo === 1) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.add('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -354,7 +347,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 2) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.add('show-top');
                     dieTwo.classList.remove('show-left');
@@ -362,7 +354,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 3) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.add('show-left');
@@ -370,7 +361,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 4) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -378,7 +368,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 5) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -386,7 +375,6 @@ Z
                     dieTwo.classList.add('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 6) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -451,7 +439,6 @@ Z
                 let currentRollDieThree = randomDiceResult();
                 let currentRollDieFour = randomDiceResult();
                 if (currentRollDieOne === 1) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.add('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -459,7 +446,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 2) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.add('show-top');
                     dieOne.classList.remove('show-left');
@@ -467,7 +453,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 3) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.add('show-left');
@@ -475,7 +460,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 4) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -483,7 +467,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 5) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -491,7 +474,6 @@ Z
                     dieOne.classList.add('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 6) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -501,7 +483,6 @@ Z
                 }
             
                 if (currentRollDieTwo === 1) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.add('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -509,7 +490,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 2) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.add('show-top');
                     dieTwo.classList.remove('show-left');
@@ -517,7 +497,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 3) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.add('show-left');
@@ -525,7 +504,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 4) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -533,7 +511,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 5) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -541,7 +518,6 @@ Z
                     dieTwo.classList.add('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 6) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -652,7 +628,6 @@ Z
                 let currentRollDieFour = randomDiceResult();
                 let currentRollDieFive = randomDiceResult();
                 if (currentRollDieOne === 1) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.add('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -660,7 +635,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 2) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.add('show-top');
                     dieOne.classList.remove('show-left');
@@ -668,7 +642,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 3) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.add('show-left');
@@ -676,7 +649,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 4) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -684,7 +656,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 5) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -692,7 +663,6 @@ Z
                     dieOne.classList.add('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 6) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -702,7 +672,6 @@ Z
                 }
             
                 if (currentRollDieTwo === 1) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.add('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -710,7 +679,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 2) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.add('show-top');
                     dieTwo.classList.remove('show-left');
@@ -718,7 +686,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 3) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.add('show-left');
@@ -726,7 +693,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 4) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -734,7 +700,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 5) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -742,7 +707,6 @@ Z
                     dieTwo.classList.add('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 6) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -900,7 +864,6 @@ Z
                 let currentRollDieFive = randomDiceResult();
                 let currentRollDieSix = randomDiceResult();
                 if (currentRollDieOne === 1) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.add('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -908,7 +871,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 2) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.add('show-top');
                     dieOne.classList.remove('show-left');
@@ -916,7 +878,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 } else if (currentRollDieOne === 3) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.add('show-left');
@@ -924,7 +885,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 4) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -932,7 +892,6 @@ Z
                     dieOne.classList.remove('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 5) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -940,7 +899,6 @@ Z
                     dieOne.classList.add('show-bottom');
                     dieOne.classList.remove('show-back');
                 }  else if (currentRollDieOne === 6) {
-                    console.log(currentRollDieOne);
                     dieOne.classList.remove('show-front');
                     dieOne.classList.remove('show-top');
                     dieOne.classList.remove('show-left');
@@ -950,7 +908,6 @@ Z
                 }
             
                 if (currentRollDieTwo === 1) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.add('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -958,7 +915,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 2) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.add('show-top');
                     dieTwo.classList.remove('show-left');
@@ -966,7 +922,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 } else if (currentRollDieTwo === 3) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.add('show-left');
@@ -974,7 +929,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 4) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -982,7 +936,6 @@ Z
                     dieTwo.classList.remove('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 5) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');
@@ -990,7 +943,6 @@ Z
                     dieTwo.classList.add('show-bottom');
                     dieTwo.classList.remove('show-back');
                 }  else if (currentRollDieTwo === 6) {
-                    console.log(currentRollDieOne);
                     dieTwo.classList.remove('show-front');
                     dieTwo.classList.remove('show-top');
                     dieTwo.classList.remove('show-left');

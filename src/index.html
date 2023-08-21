@@ -253,7 +253,8 @@
     </div>
     <div class="buttonScoreZone">
       <div class="diceSelectorDiv">
-        <label for="numberOfDice">How many dice?</label>
+        <p>Add/remove <span class="addDie">+</span> <span class="removeDie">-</span></p>
+        <!-- <label for="numberOfDice">How many dice?</label>
         <select name="numberOfDice" id="numberOfDice">
           <option value="1" selected>1</option>
           <option value="2">2</option>
@@ -261,11 +262,14 @@
           <option value="4">4</option>
           <option value="5">5</option>
           <option value="6">6</option>
-        </select>
+        </select> -->
       </div>
-      <button class="roll">Roll</button>
-      <div class="totalRollDesc">Total for this roll is</div>
-      <div class="totalRoll">0</div>
+      <div class="buttonContainer">
+        <button class="roll">Roll <span class="totalDiceSelected">1</span></button>
+      </div>
+      <div class="rollTotalDiv">
+        <div class="totalRollDesc">Total for this roll is <span class="totalRoll">0</span></div>
+      </div>
     </div>
 	<script src="js/script.js"></script>
   </body>
