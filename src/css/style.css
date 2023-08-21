@@ -116,27 +116,27 @@ button.roll {
 }
 
 .dieOne {
-  transition: all 448ms;
+  transition: all 351ms;
 }
 
 .dieTwo {
-  transition: all 257ms;
+  transition: all 407ms;
 }
 
 .dieThree {
-  transition: all 204ms;
+  transition: all 368ms;
 }
 
 .dieFour {
-  transition: all 328ms;
+  transition: all 382ms;
 }
 
 .dieFive {
-  transition: all 335ms;
+  transition: all 442ms;
 }
 
 .dieSix {
-  transition: all 480ms;
+  transition: all 491ms;
 }
 
 .dieOne, .dieTwo, .dieThree, .dieFour, .dieFive, .dieSix {

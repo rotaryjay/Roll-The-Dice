@@ -2,13 +2,13 @@
 
     let numberOfDice = '1';
 
-    let rollZoneOne = document.querySelector('.rollZone1');
+    let rolloneOne = document.querySelector('.rollZone1');
     let rollZoneTwo = document.querySelector('.rollZone2');
     let rollZoneThree = document.querySelector('.rollZone3');
     let rollZoneFour = document.querySelector('.rollZone4');
     let rollZoneFive = document.querySelector('.rollZone5');
     let rollZoneSix = document.querySelector('.rollZone6');
-
+Z
     let dieOne = document.querySelector('.rollZone1 .dieOne');
     let dieTwo = document.querySelector('.rollZone2 .dieTwo');
     let dieThree = document.querySelector('.rollZone3 .dieThree');
