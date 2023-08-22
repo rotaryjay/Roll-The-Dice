@@ -117,7 +117,6 @@ body {
 }
 
 .gameBoard {
-  font-family: "Caveat", cursive;
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -160,27 +159,27 @@ body {
 }
 
 .dieOne {
-  transition: all 279ms;
+  transition: all 262ms;
 }
 
 .dieTwo {
-  transition: all 379ms;
+  transition: all 458ms;
 }
 
 .dieThree {
-  transition: all 417ms;
+  transition: all 338ms;
 }
 
 .dieFour {
-  transition: all 483ms;
+  transition: all 344ms;
 }
 
 .dieFive {
-  transition: all 381ms;
+  transition: all 291ms;
 }
 
 .dieSix {
-  transition: all 493ms;
+  transition: all 464ms;
 }
 
 .dieOne, .dieTwo, .dieThree, .dieFour, .dieFive, .dieSix {

@@ -1,24 +1,25 @@
 //document.addEventListener('DOMContentLoaded', function () {
 
-    let arrayDice = [1];
+    let numberOfDice = 1;
 
     document.querySelector('.addDie').addEventListener('click', function() {
-        if ((arrayDice.length >= 1) && (arrayDice.length < 6)) {
-            arrayDice.push(1);
+        if ((numberOfDice >= 1) && (numberOfDice < 6)) {
+            numberOfDice++
+            console.log(numberOfDice);
+            document.querySelector('.totalRoll').textContent(numberOfDice);
         } else {
-            alert("You cannot have more than 6 dice.")
+            alert("You cannot have more than 6 dice.");
         }
     });
-
     document.querySelector('.removeDie').addEventListener('click', function() {
-        if ((arrayDice.length <= 6) && (arrayDice.length > 1)) {
-            arrayDice.pop();            
+        if ((numberOfDice <= 6) && (numberOfDice > 1)) {
+            numberOfDice--;
+            console.log(numberOfDice);
+            document.querySelector('.totalRoll').textContent(numberOfDice);
         } else {
-            alert("You cannot have less than 1 die.")
+            alert("You cannot have less than 1 die.");
         }
     });
-
-    let numberOfDice = '1';
 
     let rollZoneOne = document.querySelector('.rollZone1');
     let rollZoneTwo = document.querySelector('.rollZone2');
@@ -80,7 +81,7 @@
     }
 
     function showHideRollZones() {
-        if (numberOfDice === '1') {
+        if (numberOfDice === 1) {
             //alert(numberOfDice);
             rollZoneOne.classList.remove('hidden');
             rollZoneTwo.classList.add('hidden');
@@ -89,7 +90,7 @@
             rollZoneFive.classList.add('hidden');
             rollZoneSix.classList.add('hidden');
             document.querySelector('.totalRoll').textContent = '1';
-        } else if (numberOfDice === '2') {
+        } else if (numberOfDice === 2) {
             //alert(numberOfDice);
             rollZoneOne.classList.remove('hidden');
             rollZoneTwo.classList.remove('hidden');
@@ -98,7 +99,7 @@
             rollZoneFive.classList.add('hidden');
             rollZoneSix.classList.add('hidden');
             document.querySelector('.totalRoll').textContent = '2';
-        } else if (numberOfDice === '3') {
+        } else if (numberOfDice === 3) {
             //alert(numberOfDice);
             rollZoneOne.classList.remove('hidden');
             rollZoneTwo.classList.remove('hidden');
@@ -107,7 +108,7 @@
             rollZoneFive.classList.add('hidden');
             rollZoneSix.classList.add('hidden');
             document.querySelector('.totalRoll').textContent = '3';
-        } else if (numberOfDice === '4') {
+        } else if (numberOfDice === 4) {
             //alert(numberOfDice);
             rollZoneOne.classList.remove('hidden');
             rollZoneTwo.classList.remove('hidden');
@@ -116,7 +117,7 @@
             rollZoneFive.classList.add('hidden');
             rollZoneSix.classList.add('hidden');
             document.querySelector('.totalRoll').textContent = '4';
-        } else if (numberOfDice === '5') {
+        } else if (numberOfDice === 5) {
             //alert(numberOfDice);
             rollZoneOne.classList.remove('hidden');
             rollZoneTwo.classList.remove('hidden');
@@ -125,7 +126,7 @@
             rollZoneFive.classList.remove('hidden');
             rollZoneSix.classList.add('hidden');
             document.querySelector('.totalRoll').textContent = '5';
-        } else if (numberOfDice === '6') {
+        } else if (numberOfDice === 6) {
             //alert(numberOfDice);
             rollZoneOne.classList.remove('hidden');
             rollZoneTwo.classList.remove('hidden');
