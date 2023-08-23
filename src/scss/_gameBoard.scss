@@ -1,6 +1,8 @@
 .gameBoard {
+    background: darkgreen;
+    background: linear-gradient(transparent, darkgreen), url('../img/vecteezy_felt-dark-green-soft-rough-textile-material-background_15234513_921.jpg');
     position: relative;
-    height: 100vh;
+    height: 85vh;
     width: 100vw;
     perspective: 1000px;
     display: flex;
