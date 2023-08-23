@@ -40,7 +40,11 @@ body {
   justify-items: left;*/
   color: white;
 }
-.buttonScoreZone .diceSelectorDiv span {
+.buttonScoreZone .diceSelectorDiv img {
+  width: 26px;
+  display: inline-block;
+}
+.buttonScoreZone .diceSelectorDiv .addDie, .buttonScoreZone .diceSelectorDiv .removeDie {
   border: 1px solid white;
   display: inline-flex;
   align-items: stretch;
@@ -49,6 +53,14 @@ body {
   cursor: pointer;
   border-radius: 50%;
   justify-content: center;
+  display: inline-block;
+  position: relative;
+}
+.buttonScoreZone .diceSelectorDiv .addDiePlus, .buttonScoreZone .diceSelectorDiv .removeDieMinus {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 }
 .buttonScoreZone .buttonContainer {
   grid-area: 1/2/2/3;
@@ -62,7 +74,7 @@ body {
   /*top: 0;*/
   /*left: 0;*/
   bottom: 0;
-  width: 250px;
+  width: 80px;
   height: 80px;
   margin: 0;
   display: flex;
@@ -73,7 +85,7 @@ body {
   border: 2px solid maroon;
   /*border-bottom: 1px solid rgba(255, 0, 0, 0.1);
   border-top: 1px solid rgba(255, 0, 0, 0.1);*/
-  border-radius: 50% 50% 0 0;
+  border-radius: 50%;
   padding: 10px;
   letter-spacing: 1px;
   text-decoration: none;
@@ -109,8 +121,8 @@ body {
   text-align: right;
   color: white;
   display: flex;
-  /*align-content: center;*/
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 .buttonScoreZone .rollTotalDiv .totalRollDesc .totalRoll {
   font-weight: bold;
@@ -129,7 +141,7 @@ body {
 }
 
 .die {
-  transition: all 483ms;
+  transition: all 385ms;
   position: relative;
   display: block;
   border-radius: 10px;
