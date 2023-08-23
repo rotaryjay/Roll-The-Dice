@@ -136,7 +136,7 @@ body {
 }
 
 .die {
-  transition: all 231ms;
+  transition: all 433ms;
   position: relative;
   display: block;
   border-radius: 10px;
@@ -146,7 +146,7 @@ body {
   cursor: pointer;
   transform-style: preserve-3d;
   transform: translateZ(-50px);
-  margin: 10px;
+  margin: 26px;
 }
 .die .sideOne,
 .die .sideTwo,
