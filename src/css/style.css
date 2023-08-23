@@ -120,23 +120,16 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  perspective: 600px;
+  perspective: 1000px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /*.rollZone1, .rollZone2, .rollZone3, .rollZone4, .rollZone5, .rollZone6 {
-      padding: 20px;
-      min-width: 200px;
-      &.hidden {
-          display: none;
-      }
-  }*/
 }
 
 .die {
-  transition: all 433ms;
+  transition: all 288ms;
   position: relative;
   display: block;
   border-radius: 10px;
