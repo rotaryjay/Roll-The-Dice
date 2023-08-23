@@ -1,5 +1,5 @@
 body {
-  background: rgb(0, 55, 0);
+  background: rgb(0, 30, 0);
   /*background-color: darkgreen;
   background-image: url('../img/vecteezy_felt-dark-green-soft-rough-textile-material-background_15234513_921.jpg');
   background-position: center center;
@@ -133,8 +133,8 @@ body {
 }
 
 .gameBoard {
-  background: rgb(0, 55, 0);
-  background: linear-gradient(transparent, rgb(0, 55, 0)), url("../img/vecteezy_felt-dark-green-soft-rough-textile-material-background_15234513_921.jpg");
+  background: rgb(0, 30, 0);
+  background: linear-gradient(transparent, rgb(0, 30, 0)), url("../img/vecteezy_felt-dark-green-soft-rough-textile-material-background_15234513_921.jpg") center/cover no-repeat;
   position: relative;
   height: 85vh;
   width: 100vw;
@@ -147,7 +147,7 @@ body {
 }
 
 .die {
-  transition: all 442ms;
+  transition: all 318ms;
   position: relative;
   display: block;
   border-radius: 10px;
