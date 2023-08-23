@@ -10,6 +10,7 @@ body {
     color: white;
     font-size: 1.5em;
     margin: 10px auto;
+
     label {
         display: block;
     }
@@ -17,21 +18,22 @@ body {
 
 
 .buttonScoreZone {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: 1fr; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
     grid-column-gap: 0px;
-    grid-row-gap: 0px; 
-    background: linear-gradient(153deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 81%);
+    grid-row-gap: 0px;
+    background: linear-gradient(153deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 81%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid black;
     border-radius: 10px 10px 0 0;
-    box-shadow: 0 0 10px -2px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.5);
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+
     .diceSelectorDiv {
         grid-area: 1 / 1 / 2 / 2;
         /*display: grid;*/
@@ -39,6 +41,7 @@ body {
         /*align-items: start;
         justify-items: left;*/
         color: white;
+
         span {
             border: 1px solid white;
             display: inline-flex;
@@ -50,17 +53,19 @@ body {
             justify-content: center;
         }
     }
+
     .buttonContainer {
         grid-area: 1 / 2 / 2 / 3;
         display: grid;
         text-align: center;
         align-items: center;
         justify-items: center;
+
         button {
             position: fixed;
             /*top: 0;*/
             /*left: 0;*/
-            bottom: 10px;
+            bottom: 0;
             width: 250px;
             height: 80px;
             margin: 0;
@@ -72,7 +77,7 @@ body {
             border: 2px solid maroon;
             /*border-bottom: 1px solid rgba(255, 0, 0, 0.1);
             border-top: 1px solid rgba(255, 0, 0, 0.1);*/
-            border-radius: 10px;
+            border-radius: 50% 50% 0 0;
             padding: 10px;
             letter-spacing: 1px;
             text-decoration: none;
@@ -84,13 +89,16 @@ body {
             backdrop-filter: blur(15px);
             cursor: pointer;
             font-size: 2em;
+
             &:hover {
                 letter-spacing: 3px;
+
                 //background: linear-gradient(to left, rgba(255, 0, 0, 0.5), transparent);
                 &::before {
                     transform: skewX(45deg) translateX(50px);
                 }
             }
+
             &::before {
                 content: "";
                 position: absolute;
@@ -105,6 +113,7 @@ body {
             }
         }
     }
+
     .rollTotalDiv {
         grid-area: 1 / 3 / 2 / 4;
         text-align: right;
@@ -112,6 +121,7 @@ body {
         display: flex;
         /*align-content: center;*/
         justify-content: flex-end;
+
         .totalRollDesc {
             .totalRoll {
                 font-weight: bold;
