@@ -1,5 +1,6 @@
 // Dice Object
 let numberOfDice = 0;
+let arrayDice = [1];
 
 function randomDiceResult() {
   return Math.floor(Math.random() * 6 + 1);
@@ -10,7 +11,7 @@ const totalDiceSelected = document.querySelector(".totalDiceSelected");
 
 function showFront(diceNumber) {
   console.log(diceNumber);
-  let die = document.querySelector('.die' + diceNumber)
+  let die = document.querySelector("." + diceNumber);
   die.classList.add("show-front");
   die.classList.remove("show-top");
   die.classList.remove("show-left");
@@ -20,7 +21,7 @@ function showFront(diceNumber) {
 }
 function showTop(diceNumber) {
   console.log(diceNumber);
-  let die = document.querySelector('.die' + diceNumber)
+  let die = document.querySelector("." + diceNumber);
   die.classList.remove("show-front");
   die.classList.add("show-top");
   die.classList.remove("show-left");
@@ -30,7 +31,7 @@ function showTop(diceNumber) {
 }
 function showLeft(diceNumber) {
   console.log(diceNumber);
-  let die = document.querySelector('.die' + diceNumber)
+  let die = document.querySelector("." + diceNumber);
   die.classList.remove("show-front");
   die.classList.remove("show-top");
   die.classList.add("show-left");
@@ -40,7 +41,7 @@ function showLeft(diceNumber) {
 }
 function showRight(diceNumber) {
   console.log(diceNumber);
-  let die = document.querySelector('.die' + diceNumber)
+  let die = document.querySelector("." + diceNumber);
   die.classList.remove("show-front");
   die.classList.remove("show-top");
   die.classList.remove("show-left");
@@ -50,7 +51,7 @@ function showRight(diceNumber) {
 }
 function showBottom(diceNumber) {
   console.log(diceNumber);
-  let die = document.querySelector('.die' + diceNumber)
+  let die = document.querySelector("." + diceNumber);
   die.classList.remove("show-front");
   die.classList.remove("show-top");
   die.classList.remove("show-left");
@@ -60,7 +61,7 @@ function showBottom(diceNumber) {
 }
 function showBack(diceNumber) {
   console.log(diceNumber);
-  let die = document.querySelector('.die' + diceNumber)
+  let die = document.querySelector("." + diceNumber);
   die.classList.remove("show-front");
   die.classList.remove("show-top");
   die.classList.remove("show-left");
@@ -68,58 +69,13 @@ function showBack(diceNumber) {
   die.classList.remove("show-bottom");
   die.classList.add("show-back");
 }
-/*function die1ShowFront() {
-  die1.classList.add("show-front");
-  die1.classList.remove("show-top");
-  die1.classList.remove("show-left");
-  die1.classList.remove("show-right");
-  die1.classList.remove("show-bottom");
-  die1.classList.remove("show-back");
-}
-function die1ShowTop() {
-  die1.classList.remove("show-front");
-  die1.classList.add("show-top");
-  die1.classList.remove("show-left");
-  die1.classList.remove("show-right");
-  die1.classList.remove("show-bottom");
-  die1.classList.remove("show-back");
-}
-function die1ShowLeft() {
-  die1.classList.remove("show-front");
-  die1.classList.remove("show-top");
-  die1.classList.add("show-left");
-  die1.classList.remove("show-right");
-  die1.classList.remove("show-bottom");
-  die1.classList.remove("show-back");
-}
-function die1ShowRight() {
-  die1.classList.remove("show-front");
-  die1.classList.remove("show-top");
-  die1.classList.remove("show-left");
-  die1.classList.add("show-right");
-  die1.classList.remove("show-bottom");
-  die1.classList.remove("show-back");
-}
-function die1ShowBottom() {
-  die1.classList.remove("show-front");
-  die1.classList.remove("show-top");
-  die1.classList.remove("show-left");
-  die1.classList.remove("show-right");
-  die1.classList.add("show-bottom");
-  die1.classList.remove("show-back");
-}
-function die1ShowBack() {
-  die1.classList.remove("show-front");
-  die1.classList.remove("show-top");
-  die1.classList.remove("show-left");
-  die1.classList.remove("show-right");
-  die1.classList.remove("show-bottom");
-  die1.classList.add("show-back");
-}*/
 
 document.querySelector(".addDie").addEventListener("click", function () {
-  if (numberOfDice >= 0 && numberOfDice < 5) {
+  if (arrayDice.length >= 0 && arrayDice.length < 5) {
+    console.log("The array is " + arrayDice);
     numberOfDice++;
+    arrayDice.push(numberOfDice + 1);
+    console.log("The array is now " + arrayDice);
     let diceNumber = numberOfDice + 1;
     totalDiceSelected.textContent = numberOfDice + 1;
     console.log("numberOfDice variable is at: " + numberOfDice);
@@ -127,16 +83,20 @@ document.querySelector(".addDie").addEventListener("click", function () {
     const die = document.querySelector(".die");
     const clone = die.cloneNode(true);
     document.querySelector(".gameBoard").appendChild(clone);
-    clone.classList.add('die' + diceNumber);
-    clone.classList.remove('die1');
+    clone.classList.add("die" + diceNumber);
+    clone.classList.remove("die1");
   } else {
     alert("You cannot have more than 6 dice.");
   }
 });
 document.querySelector(".removeDie").addEventListener("click", function () {
-  if (numberOfDice <= 5 && numberOfDice > 0) {
+  if (arrayDice.length <= 5 && arrayDice.length > 0) {
+    console.log("The array is " + arrayDice);
+    const index = arrayDice.indexOf("2");
+    arrayDice.splice(index, 1);
+    console.log("The array is now " + arrayDice);
     let diceNumber = numberOfDice + 1;
-    document.querySelector('.die' + diceNumber).remove();
+    document.querySelector(".die" + diceNumber).remove();
     numberOfDice--;
     totalDiceSelected.textContent = numberOfDice + 1;
     console.log("numberOfDice variable is at: " + numberOfDice);
@@ -147,27 +107,56 @@ document.querySelector(".removeDie").addEventListener("click", function () {
 });
 
 document.querySelector(".roll").addEventListener("click", function () {
-  let currentRollDieOne = randomDiceResult();
-  let diceNumber = 'die' + (numberOfDice + 1);
-  if (currentRollDieOne == 1) {
-    //die1ShowFront();
-    showFront(diceNumber);
-  } else if (currentRollDieOne == 2) {
-    //die1ShowTop();
-    showTop(diceNumber);
-  } else if (currentRollDieOne == 3) {
-    //die1ShowLeft();
-    showLeft(diceNumber);
-  } else if (currentRollDieOne == 4) {
-    //die1ShowRight();
-    showRight(diceNumber);
-  } else if (currentRollDieOne == 5) {
-    //die1ShowBottom();
-    showBottom(diceNumber);
-  } else if (currentRollDieOne == 6) {
-    //die1ShowBack();
-    showBack(diceNumber);
+  let i = 0;
+  while (i < arrayDice.length) {
+    const currentDie = arrayDice[i];
+    console.log(currentDie);
+    let currentRollDie = randomDiceResult();
+    let diceNumber = "die" + (currentRollDie);
+    if (currentRollDie == 1) {
+      //die1ShowFront();
+      showFront(diceNumber);
+    } else if (currentRollDie == 2) {
+      //die1ShowTop();
+      showTop(diceNumber);
+    } else if (currentRollDie == 3) {
+      //die1ShowLeft();
+      showLeft(diceNumber);
+    } else if (currentRollDie == 4) {
+      //die1ShowRight();
+      showRight(diceNumber);
+    } else if (currentRollDie == 5) {
+      //die1ShowBottom();
+      showBottom(diceNumber);
+    } else if (currentRollDie == 6) {
+      //die1ShowBack();
+      showBack(diceNumber);
+    }
+    i++;
   }
+  /*function rollTheDice() {
+    let currentRollDie1 = randomDiceResult();
+    let diceNumber = "die" + (numberOfDice + 1);
+    if (currentRollDie1 == 1) {
+      //die1ShowFront();
+      showFront(diceNumber);
+    } else if (currentRollDie1 == 2) {
+      //die1ShowTop();
+      showTop(diceNumber);
+    } else if (currentRollDie1 == 3) {
+      //die1ShowLeft();
+      showLeft(diceNumber);
+    } else if (currentRollDie1 == 4) {
+      //die1ShowRight();
+      showRight(diceNumber);
+    } else if (currentRollDie1 == 5) {
+      //die1ShowBottom();
+      showBottom(diceNumber);
+    } else if (currentRollDie1 == 6) {
+      //die1ShowBack();
+      showBack(diceNumber);
+    }
+  } */
 });
 
 // Disable pinch zoom
