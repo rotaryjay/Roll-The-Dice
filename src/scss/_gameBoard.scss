@@ -1,5 +1,4 @@
 .gameBoard {
-    //font-family: 'Caveat', cursive;
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -9,36 +8,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /*display: grid; 
-    grid-template-columns: repeat(6, 1fr); 
-    grid-template-rows: repeat(5, 1fr); 
-    grid-column-gap: 20px;
-    grid-row-gap: 20px; */
-    
-    .rollZone1, .rollZone2, .rollZone3, .rollZone4, .rollZone5, .rollZone6 {
+    /*.rollZone1, .rollZone2, .rollZone3, .rollZone4, .rollZone5, .rollZone6 {
         padding: 20px;
         min-width: 200px;
         &.hidden {
             display: none;
         }
-    }
-    /*.rollZone1 {
-        grid-area: 1 / 1 / 2 / 2;
-    }
-    .rollZone2 {
-        grid-area: 1 / 2 / 2 / 3;
-    }
-    .rollZone3 {
-        grid-area: 1 / 3 / 2 / 4;
-    }
-    .rollZone4 {
-        grid-area: 1 / 4 / 2 / 5;
-    }
-    .rollZone5 {
-        grid-area: 1 / 5 / 2 / 6;
-    }
-    .rollZone6 {
-        grid-area: 1 / 6 / 2 / 7;
     }*/
-    
 }
