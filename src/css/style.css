@@ -1,10 +1,5 @@
 body {
   background: rgb(0, 30, 0);
-  /*background-color: darkgreen;
-  background-image: url('../img/vecteezy_felt-dark-green-soft-rough-textile-material-background_15234513_921.jpg');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;*/
 }
 
 .diceSelectorDiv {
@@ -66,10 +61,11 @@ body {
 }
 .buttonScoreZone .buttonContainer {
   grid-area: 1/2/2/3;
-  display: grid;
+  display: flex;
   text-align: center;
-  align-items: center;
-  justify-items: center;
+  /*align-items: center;
+  justify-items: center;*/
+  justify-content: center;
 }
 .buttonScoreZone .buttonContainer button {
   position: fixed;
@@ -147,7 +143,7 @@ body {
 }
 
 .die {
-  transition: all 318ms;
+  transition: all 434ms;
   position: relative;
   display: block;
   border-radius: 10px;

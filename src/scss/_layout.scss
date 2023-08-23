@@ -1,11 +1,5 @@
 body {
     background: rgb(0, 30, 0);
-    //background: linear-gradient(transparent, darkgreen), url('../img/vecteezy_felt-dark-green-soft-rough-textile-material-background_15234513_921.jpg');
-    /*background-color: darkgreen;
-    background-image: url('../img/vecteezy_felt-dark-green-soft-rough-textile-material-background_15234513_921.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;*/
 }
 
 .diceSelectorDiv {
@@ -38,10 +32,7 @@ body {
 
     .diceSelectorDiv {
         grid-area: 1 / 1 / 2 / 2;
-        /*display: grid;*/
         text-align: left;
-        /*align-items: start;
-        justify-items: left;*/
         color: white;
         font-family: 'Montserrat', sans-serif;
         img {
@@ -70,15 +61,11 @@ body {
 
     .buttonContainer {
         grid-area: 1 / 2 / 2 / 3;
-        display: grid;
+        display: flex;
         text-align: center;
-        align-items: center;
-        justify-items: center;
-
+        justify-content: center;
         button {
             position: fixed;
-            /*top: 0;*/
-            /*left: 0;*/
             bottom: 0;
             width: 80px;
             height: 80px;
@@ -106,8 +93,6 @@ body {
             font-family: 'Montserrat', sans-serif;
             &:hover {
                 letter-spacing: 3px;
-
-                //background: linear-gradient(to left, rgba(255, 0, 0, 0.5), transparent);
                 &::before {
                     transform: skewX(45deg) translateX(50px);
                 }
