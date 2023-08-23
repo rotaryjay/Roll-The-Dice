@@ -94,9 +94,9 @@ const build = gulp.series(
   copyPng,
   copyJpg,
   copyBackgrounds,
-  buildStyles/*,
+  buildStyles,
   gulpRev,
-  updateIndex*/
+  updateIndex
 );
 
 // Define default task
