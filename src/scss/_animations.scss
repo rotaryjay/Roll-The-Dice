@@ -18,11 +18,58 @@
 
 @keyframes dropIn {
   from {
-    transform: scale(2);
+    opacity: 0;
+    transform: scale(5);
   }
 
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes rollDice {
+  0% {
+    transform: translateZ(-50px) rotateY(0deg); // Show front
+  }
+
+  10% {
+    transform: translateZ(-50px) rotateY(-90deg); // Show right
+  }
+
+  20% {
+    transform: translateZ(-50px) rotateY(-180deg); // Show back
+  }
+
+  30% {
+    transform: translateZ(-50px) rotateY(90deg); // Show left
+  }
+
+  40% {
+    transform: translateZ(-50px) rotateX(-90deg); // Show top
+  }
+
+  50% {
+    transform: translateZ(-50px) rotateX(90deg); // Show bottom
+  }
+
+  60% {
+    transform: translateZ(-50px) rotateX(-90deg); // Show top
+  }
+
+  70% {
+    transform: translateZ(-50px) rotateY(90deg); // Show left
+  }
+
+  80% {
+    transform: translateZ(-50px) rotateY(-180deg); // Show back
+  }
+
+  90% {
+    transform: translateZ(-50px) rotateY(-90deg); // Show right
+  }
+
+  100% {
+    transform: translateZ(-50px) rotateY(0deg); // Show front
   }
 }

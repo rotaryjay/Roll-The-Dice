@@ -1,80 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="apple-mobile-web-app-title" content="Roll The Dice!" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <link rel="apple-touch-icon" href="img/favicon/ios/AppIcon.appiconset/Icon-App-60x60@2x.png" />
-    <link rel="apple-touch-icon" sizes="58x58" href="img/favicon/ios/AppIcon.appiconset/Icon-App-29x29@2x.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/ios/AppIcon.appiconset/Icon-App-76x76@1x.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/ios/AppIcon.appiconset/Icon-App-76x76@2x.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/ios/AppIcon.appiconset/Icon-App-60x60@3x.png" />
-    <title>Roll The Dice!</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div class="gameBoard">
-      <div class="die die1 show-front">
-        <div class="sideOne front">
-          <div class="dieDot"></div>
-        </div>
-        <div class="sideTwo top">
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-        </div>
-        <div class="sideThree left">
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-        </div>
-        <div class="sideFour right">
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-        </div>
-        <div class="sideFive bottom">
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-        </div>
-        <div class="sideSix back">
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-          <div class="dieDot"></div>
-        </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-title" content="Roll The Dice!" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon" href="img/favicon/ios/AppIcon.appiconset/Icon-App-60x60@2x.png" />
+  <link rel="apple-touch-icon" sizes="58x58" href="img/favicon/ios/AppIcon.appiconset/Icon-App-29x29@2x.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/ios/AppIcon.appiconset/Icon-App-76x76@1x.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/ios/AppIcon.appiconset/Icon-App-76x76@2x.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/ios/AppIcon.appiconset/Icon-App-60x60@3x.png" />
+  <title>Roll The Dice!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Montserrat&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="gameBoard">
+    <div class="die die1 show-front">
+      <div class="sideOne front">
+        <div class="dieDot"></div>
+      </div>
+      <div class="sideTwo top">
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+      </div>
+      <div class="sideThree left">
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+      </div>
+      <div class="sideFour right">
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+      </div>
+      <div class="sideFive bottom">
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+      </div>
+      <div class="sideSix back">
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
+        <div class="dieDot"></div>
       </div>
     </div>
-    <div class="buttonScoreZone">
-      <div class="diceSelectorDiv">
-        <img src="img/diceIcon.png" /> <div class="addDie"><div class="addDiePlus">+</div></div> <div class="removeDie"><div class="removeDieMinus">-</div></div>
+  </div>
+  <div class="buttonScoreZone">
+    <div class="diceSelectorDiv">
+      <img src="img/diceIcon.png" />
+      <div class="addDie">
+        <div class="addDiePlus">+</div>
       </div>
-      <div class="buttonContainer">
-        <button class="roll"><span class="totalDiceSelected">1</span></button>
-      </div>
-      <div class="rollTotalDiv">
-        <div class="totalRollDesc">Total <span class="totalRoll">0</span></div>
+      <div class="removeDie">
+        <div class="removeDieMinus">-</div>
       </div>
     </div>
-	<script src="js/script.js"></script>
-  </body>
+    <div class="buttonContainer">
+      <button class="roll"><span class="totalDiceSelected">1</span></button>
+    </div>
+    <div class="rollTotalDiv">
+      <div class="totalRollDesc">Total <span class="totalRoll">0</span></div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
 </html>

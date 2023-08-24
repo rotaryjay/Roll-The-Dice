@@ -11,6 +11,12 @@ const totalDiceSelected = document.querySelector(".totalDiceSelected");
 
 function showFront(diceNumber) {
   let die = document.querySelector("." + diceNumber);
+  // Start dice rolling animation defore settling
+  die.classList.add("diceRolling");
+  setTimeout(function() {
+    die.classList.remove("diceRolling");
+  },700);
+  // End dice rolling animation defore settling
   die.classList.add("show-front");
   die.classList.remove("show-top");
   die.classList.remove("show-left");
@@ -20,6 +26,12 @@ function showFront(diceNumber) {
 }
 function showTop(diceNumber) {
   let die = document.querySelector("." + diceNumber);
+  // Start dice rolling animation defore settling
+  die.classList.add("diceRolling");
+  setTimeout(function() {
+    die.classList.remove("diceRolling");
+  },700);
+  // End dice rolling animation defore settling  
   die.classList.remove("show-front");
   die.classList.add("show-top");
   die.classList.remove("show-left");
@@ -29,6 +41,12 @@ function showTop(diceNumber) {
 }
 function showLeft(diceNumber) {
   let die = document.querySelector("." + diceNumber);
+  // Start dice rolling animation defore settling
+  die.classList.add("diceRolling");
+  setTimeout(function() {
+    die.classList.remove("diceRolling");
+  },700);
+  // End dice rolling animation defore settling
   die.classList.remove("show-front");
   die.classList.remove("show-top");
   die.classList.add("show-left");
@@ -38,6 +56,12 @@ function showLeft(diceNumber) {
 }
 function showRight(diceNumber) {
   let die = document.querySelector("." + diceNumber);
+  // Start dice rolling animation defore settling
+  die.classList.add("diceRolling");
+  setTimeout(function() {
+    die.classList.remove("diceRolling");
+  },700);
+  // End dice rolling animation defore settling
   die.classList.remove("show-front");
   die.classList.remove("show-top");
   die.classList.remove("show-left");
@@ -47,6 +71,12 @@ function showRight(diceNumber) {
 }
 function showBottom(diceNumber) {
   let die = document.querySelector("." + diceNumber);
+  // Start dice rolling animation defore settling
+  die.classList.add("diceRolling");
+  setTimeout(function() {
+    die.classList.remove("diceRolling");
+  },700);
+  // End dice rolling animation defore settling
   die.classList.remove("show-front");
   die.classList.remove("show-top");
   die.classList.remove("show-left");
@@ -56,6 +86,12 @@ function showBottom(diceNumber) {
 }
 function showBack(diceNumber) {
   let die = document.querySelector("." + diceNumber);
+  // Start dice rolling animation defore settling
+  die.classList.add("diceRolling");
+  setTimeout(function() {
+    die.classList.remove("diceRolling");
+  },700);
+  // End dice rolling animation defore settling
   die.classList.remove("show-front");
   die.classList.remove("show-top");
   die.classList.remove("show-left");
@@ -65,7 +101,7 @@ function showBack(diceNumber) {
 }
 
 document.querySelector(".addDie").addEventListener("click", function () {
-  if (arrayDice.length >= 0 && arrayDice.length < 8) {
+  if (arrayDice.length >= 0 && arrayDice.length < 30) {
     numberOfDice++;
     arrayDice.push(numberOfDice + 1);
     let diceNumber = numberOfDice + 1;
@@ -76,11 +112,11 @@ document.querySelector(".addDie").addEventListener("click", function () {
     clone.classList.add("die" + diceNumber);
     clone.classList.remove("die1");
   } else {
-    alert("You cannot have more than 8 dice.");
+    alert("You cannot have more than 30 dice.");
   }
 });
 document.querySelector(".removeDie").addEventListener("click", function () {
-  if (arrayDice.length <= 8 && arrayDice.length > 0) {
+  if (arrayDice.length <= 30 && arrayDice.length > 0) {
     const index = arrayDice.indexOf("2");
     arrayDice.splice(index, 1);
     let diceNumber = numberOfDice + 1;
@@ -93,6 +129,10 @@ document.querySelector(".removeDie").addEventListener("click", function () {
 });
 
 document.querySelector(".roll").addEventListener("click", function () {
+  /* document.querySelector('.die').classList.add("diceRolling");
+  setTimeout(function() {
+    document.querySelector('.die').classList.remove("diceRolling");
+  },700); */
   totalRoll = 0;
   let i = 0;
   while (i < arrayDice.length) {

@@ -30,10 +30,7 @@ body {
 }
 .buttonScoreZone .diceSelectorDiv {
   grid-area: 1/1/2/2;
-  /*display: grid;*/
   text-align: left;
-  /*align-items: start;
-  justify-items: left;*/
   color: white;
   font-family: "Montserrat", sans-serif;
 }
@@ -63,14 +60,10 @@ body {
   grid-area: 1/2/2/3;
   display: flex;
   text-align: center;
-  /*align-items: center;
-  justify-items: center;*/
   justify-content: center;
 }
 .buttonScoreZone .buttonContainer button {
   position: fixed;
-  /*top: 0;*/
-  /*left: 0;*/
   bottom: 0;
   width: 80px;
   height: 80px;
@@ -143,17 +136,20 @@ body {
 }
 
 .die {
-  transition: all 434ms;
+  transition: all 170ms;
   position: relative;
   display: block;
   border-radius: 10px;
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   transform: translate(-50%, -50%);
   cursor: pointer;
   transform-style: preserve-3d;
-  transform: translateZ(-50px);
-  margin: 26px;
+  transform: translateZ(-25px);
+  margin: 14px;
+}
+.die.diceRolling {
+  animation: rollDice 0.5s ease-in-out;
 }
 .die .sideOne,
 .die .sideTwo,
@@ -165,45 +161,45 @@ body {
   background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(195, 195, 195) 100%);
   border: 1px solid rgb(200, 200, 200);
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 5px;
 }
 .die.show-front {
-  transform: translateZ(-50px) rotateY(0deg);
+  transform: translateZ(-25px) rotateY(0deg);
 }
 .die.show-right {
-  transform: translateZ(-50px) rotateY(-90deg);
+  transform: translateZ(-25px) rotateY(-90deg);
 }
 .die.show-back {
-  transform: translateZ(-50px) rotateY(-180deg);
+  transform: translateZ(-25px) rotateY(-180deg);
 }
 .die.show-left {
-  transform: translateZ(-50px) rotateY(90deg);
+  transform: translateZ(-25px) rotateY(90deg);
 }
 .die.show-top {
-  transform: translateZ(-50px) rotateX(-90deg);
+  transform: translateZ(-25px) rotateX(-90deg);
 }
 .die.show-bottom {
-  transform: translateZ(-50px) rotateX(90deg);
+  transform: translateZ(-25px) rotateX(90deg);
 }
 .die .front {
-  transform: rotateY(0deg) translateZ(50px);
+  transform: rotateY(0deg) translateZ(25px);
 }
 .die .right {
-  transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ(25px);
 }
 .die .back {
-  transform: rotateY(180deg) translateZ(50px);
+  transform: rotateY(180deg) translateZ(25px);
 }
 .die .left {
-  transform: rotateY(-90deg) translateZ(50px);
+  transform: rotateY(-90deg) translateZ(25px);
 }
 .die .top {
-  transform: rotateX(90deg) translateZ(50px);
+  transform: rotateX(90deg) translateZ(25px);
 }
 .die .bottom {
-  transform: rotateX(-90deg) translateZ(50px);
+  transform: rotateX(-90deg) translateZ(25px);
 }
 .die .sideOne .dieDot {
   border-radius: 50%;
@@ -311,8 +307,8 @@ body {
   position: absolute;
   display: block;
   transform: translate(-50%, -50%);
-  height: 20px;
-  width: 20px;
+  height: 10px;
+  width: 10px;
 }
 
 .hidden {
@@ -337,11 +333,47 @@ body {
 }
 @keyframes dropIn {
   from {
-    transform: scale(2);
+    opacity: 0;
+    transform: scale(5);
   }
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+@keyframes rollDice {
+  0% {
+    transform: translateZ(-50px) rotateY(0deg);
+  }
+  10% {
+    transform: translateZ(-50px) rotateY(-90deg);
+  }
+  20% {
+    transform: translateZ(-50px) rotateY(-180deg);
+  }
+  30% {
+    transform: translateZ(-50px) rotateY(90deg);
+  }
+  40% {
+    transform: translateZ(-50px) rotateX(-90deg);
+  }
+  50% {
+    transform: translateZ(-50px) rotateX(90deg);
+  }
+  60% {
+    transform: translateZ(-50px) rotateX(-90deg);
+  }
+  70% {
+    transform: translateZ(-50px) rotateY(90deg);
+  }
+  80% {
+    transform: translateZ(-50px) rotateY(-180deg);
+  }
+  90% {
+    transform: translateZ(-50px) rotateY(-90deg);
+  }
+  100% {
+    transform: translateZ(-50px) rotateY(0deg);
   }
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
