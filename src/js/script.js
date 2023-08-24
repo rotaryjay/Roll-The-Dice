@@ -101,7 +101,7 @@ function showBack(diceNumber) {
 }
 
 document.querySelector(".addDie").addEventListener("click", function () {
-  if ((arrayDice.length >= 0) && (arrayDice.length < 30)) {
+  if ((arrayDice.length >= 0) && (arrayDice.length < 40)) {
     numberOfDice++;
     arrayDice.push(numberOfDice + 1);
     let diceNumber = numberOfDice + 1;
@@ -112,11 +112,11 @@ document.querySelector(".addDie").addEventListener("click", function () {
     clone.classList.add("die" + diceNumber);
     clone.classList.remove("die1");
   } else {
-    alert("You cannot have more than 30 dice.");
+    alert("You cannot have more than 40 dice.");
   }
 });
 document.querySelector(".removeDie").addEventListener("click", function () {
-  if ((arrayDice.length <= 30) && (arrayDice.length > 1)) {
+  if ((arrayDice.length <= 40) && (arrayDice.length > 1)) {
     const index = arrayDice.indexOf("2");
     arrayDice.splice(index, 1);
     let diceNumber = numberOfDice + 1;

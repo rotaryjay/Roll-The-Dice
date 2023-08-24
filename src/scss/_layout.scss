@@ -35,11 +35,17 @@ body {
         text-align: left;
         color: white;
         font-family: 'Montserrat', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         img {
             width: 26px;
             display: inline-block;
         }
-        .addDie, .removeDie {
+
+        .addDie,
+        .removeDie {
             border: 1px solid white;
             display: inline-flex;
             align-items: stretch;
@@ -50,8 +56,11 @@ body {
             justify-content: center;
             display: inline-block;
             position: relative;
+            margin: 0 0 0 10px;
         }
-        .addDiePlus, .removeDieMinus {
+
+        .addDiePlus,
+        .removeDieMinus {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -64,6 +73,7 @@ body {
         display: flex;
         text-align: center;
         justify-content: center;
+
         button {
             position: fixed;
             bottom: 0;
@@ -91,8 +101,10 @@ body {
             cursor: pointer;
             font-size: 2em;
             font-family: 'Montserrat', sans-serif;
+
             &:hover {
                 letter-spacing: 3px;
+
                 &::before {
                     transform: skewX(45deg) translateX(50px);
                 }
@@ -121,6 +133,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+
         .totalRollDesc {
             .totalRoll {
                 font-weight: bold;
