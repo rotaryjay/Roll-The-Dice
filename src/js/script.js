@@ -101,7 +101,7 @@ function showBack(diceNumber) {
 }
 
 document.querySelector(".addDie").addEventListener("click", function () {
-  if (arrayDice.length >= 0 && arrayDice.length < 30) {
+  if ((arrayDice.length >= 0) && (arrayDice.length < 30)) {
     numberOfDice++;
     arrayDice.push(numberOfDice + 1);
     let diceNumber = numberOfDice + 1;
@@ -116,7 +116,7 @@ document.querySelector(".addDie").addEventListener("click", function () {
   }
 });
 document.querySelector(".removeDie").addEventListener("click", function () {
-  if (arrayDice.length <= 30 && arrayDice.length > 0) {
+  if ((arrayDice.length <= 30) && (arrayDice.length > 1)) {
     const index = arrayDice.indexOf("2");
     arrayDice.splice(index, 1);
     let diceNumber = numberOfDice + 1;
@@ -129,10 +129,6 @@ document.querySelector(".removeDie").addEventListener("click", function () {
 });
 
 document.querySelector(".roll").addEventListener("click", function () {
-  /* document.querySelector('.die').classList.add("diceRolling");
-  setTimeout(function() {
-    document.querySelector('.die').classList.remove("diceRolling");
-  },700); */
   totalRoll = 0;
   let i = 0;
   while (i < arrayDice.length) {
